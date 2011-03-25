@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #f1eee4;
+}
+.wrapper{
+    width: 960px;
+    margin: 0 auto;        
+}
+.clean{
+    clear: both;
+}
+img{
+    outline: none;
+    border: none;
+}
+#header{
+    background: #232f43 url(/files/img/sombra.png) repeat-y center;
+    height: 140px;
+    width: 100%;
+}
+#header .wrapper{
+    background: url(/files/img/test.png) no-repeat;
+    height: 140px;
+}
+.logo{
+    float: left;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.site_title{
+    float: left;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+.site_title .name{
+    font-size: 23px;
+    line-height: 35px;    
+    color: #fff;
+    text-shadow: 0px 1px 1px #a1b059;
+}
+#navigation{
+    border-top: 1px #fff solid;
+    height: 40px;
+    background: url(/files/img/nav_back.png) repeat-x;
+}
+
