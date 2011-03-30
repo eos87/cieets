@@ -4,10 +4,23 @@
         <title>CIEETS | {% block title %}{% endblock %}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" rel="stylesheet"  href="/files/css/cieets.css">
+        <link type="text/css" rel="stylesheet"  href="/files/css/nav.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script src="/files/js/cufon-yui.js" type="text/javascript"></script>
         <script src="/files/js/libertine.font.js" type="text/javascript"></script>
         <script type="text/javascript">
-            
+            function mainmenu(){
+                $(" #nav ul ").css({display: "none"}); // Opera Fix
+                $(" #nav li").hover(function(){
+                    $(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400);
+                },function(){
+                    $(this).find('ul:first').css({visibility: "hidden"});
+                });
+            }
+            $(document).ready(function(){
+                mainmenu();
+            });
+
         </script>
         {% block extrahead %}{% endblock %}
     </head>
@@ -17,8 +30,56 @@
                 <div class="logo"><a href="/"><img src="/files/img/logo-cieets.png" alt="Cieets Logo"></a></div>                
             </div>
         </div>
-        <div id="navigation"></div>
-        <div id="contenido">            
+        <div id="navigation">
+            <div class="wrapper">
+                <ul class="nivel1" id="nav">
+                    <li><a class="lvl1" href="/">Inicio</a></li>
+                    <li><a class="lvl1" href="#">Quienes Somos</a></li>
+                    <li>
+                        <a class="lvl1" href="#">Facultad Evangelica de Estudios Teol&oacute;gicos</a>
+                        <ul class="nivel2">
+                            <li>
+                                <a class="lvl2" href="/">Presentacion</a>
+                                <div class="nivel3">
+                                    <a href="#">Nivel B&aacute;sico</a>
+                                    <a href="#">Nivel Medio</a>
+                                    <a href="#">Nivel Superior</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="lvl2"  href="#">Programas</a>
+                                <div class="nivel3">
+                                    <a href="#">Nivel B&aacute;sico</a>
+                                    <a href="#">Nivel Medio</a>
+                                    <a href="#">Nivel Superior</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="lvl1" href="#">Medio Ambiente y Desarrollo</a>
+                        <ul id="cuarto" class="nivel2">
+                            <li>
+                                <a class="lvl2" href="/">Presentacion</a>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Programas</a>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="contenido">
+            <div class="wrapper">
+                {% block contenido %}{% endblock %}
+            </div>
         </div>
         <div id="footer"></div>
     </body>
