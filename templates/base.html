@@ -10,17 +10,32 @@
         <script src="/files/js/libertine.font.js" type="text/javascript"></script>
         <script type="text/javascript">
             function mainmenu(){
-                $(" #nav ul ").css({display: "none"}); // Opera Fix
-                $(" #nav li").hover(function(){
-                    $(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400);
+                var elems = $('.nivel2');
+                for(var i=0;i<elems.length;i++){
+                    var ancho = 0;
+                    var hijos = $(elems[i]).children();
+                    for(var j=0; j<hijos.length;j++){
+                        ancho += $(hijos[j]).width();
+                    }
+                    $(elems[i]).width(ancho);
+                }
+                $('.nivel2').each(function(){
+                    var ancho = 0;
+                    $(this).children().each(function(){
+                        ancho += $(this).width();
+                    });
+                    $(this).css('width', ancho+'px');
+                });
+                $("#nav ul").css({display: "none"}); // Opera Fix
+                $("#nav li").hover(function(){                    
+                    $(this).find('ul:first').css({visibility: "visible",display: "none"}).show(600);
                 },function(){
                     $(this).find('ul:first').css({visibility: "hidden"});
                 });
             }
             $(document).ready(function(){
-                mainmenu();
+                mainmenu();                
             });
-
         </script>
         {% block extrahead %}{% endblock %}
     </head>
@@ -37,9 +52,17 @@
                     <li><a class="lvl1" href="#">Quienes Somos</a></li>
                     <li>
                         <a class="lvl1" href="#">Facultad Evangelica de Estudios Teol&oacute;gicos</a>
-                        <ul class="nivel2">
+                        <ul class="nivel2" id="nivel21">
                             <li>
-                                <a class="lvl2" href="/">Presentacion</a>
+                                <a class="lvl2" href="/presentacion/">Presentacion</a>
+                                <div class="nivel3">
+                                    <a href="#">Teologia contextual a estudiantes extrajeros</a>
+                                    <a href="#">Nivel Medio</a>
+                                    <a href="#">Nivel Superior</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="lvl2"  href="programas">Programas</a>
                                 <div class="nivel3">
                                     <a href="#">Nivel B&aacute;sico</a>
                                     <a href="#">Nivel Medio</a>
@@ -53,7 +76,7 @@
                                     <a href="#">Nivel Medio</a>
                                     <a href="#">Nivel Superior</a>
                                 </div>
-                            </li>
+                            </li>                            
                         </ul>
                     </li>
                     <li>
@@ -81,6 +104,6 @@
                 {% block contenido %}{% endblock %}
             </div>
         </div>
-        <div id="footer"></div>
+        <div id="footer"></div>        
     </body>
 </html>
