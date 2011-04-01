@@ -1,7 +1,53 @@
 {% extends "base.html" %}
+{% load tree_menu_tags %}
 {% block title %}Home{% endblock %}
+
+{% block extrahead %}
+<script src="/files/js/jquery.jcarousel.min.js" type="text/javascript"></script>
+<script src="/files/js/cconfig.js" type="text/javascript"></script>
+{% endblock %}
+
 {% block contenido %}
 <div class="carrusel">
-    
+    <div class="carrusel-button-prev" id="#mycarousel-prev"></div>
+    <div id="carrusel-container">
+        <ul id="fotocarrusel">
+            <li class="carrusel-item">
+                <a href="/files/img/img1.png"><img src="/files/img/img1.png" alt="imagen"></a>
+            </li>
+            <li class="carrusel-item">
+                <a href="/files/img/img2.png"><img src="/files/img/img2.png" alt="imagen"></a>
+            </li>
+            <li class="carrusel-item">
+                <a href="/files/img/img1.png"><img src="/files/img/img1.png" alt="imagen"></a>
+            </li>
+            <li class="carrusel-item">
+                <a href="/files/img/img2.png"><img src="/files/img/img2.png" alt="imagen"></a>
+            </li>
+            <li class="carrusel-item">
+                <a href="/files/img/img1.png"><img src="/files/img/img1.png" alt="imagen"></a>
+            </li>
+            <li class="carrusel-item">
+                <a href="/files/img/img2.png"><img src="/files/img/img2.png" alt="imagen"></a>
+            </li>
+            <li class="carrusel-item">
+                <a href="/files/img/img1.png"><img src="/files/img/img1.png" alt="imagen"></a>
+            </li>
+            <li class="carrusel-item">
+                <a href="/files/img/img2.png"><img src="/files/img/img2.png" alt="imagen"></a>
+            </li>
+            <li class="carrusel-item">
+                <a href="/files/img/img1.png"><img src="/files/img/img1.png" alt="imagen"></a>
+            </li>
+            <li class="carrusel-item">
+                <a href="/files/img/img2.png"><img src="/files/img/img2.png" alt="imagen"></a>
+            </li>  
+        </ul>
+    </div>
+    <div class="carrusel-button-next" id="#mycarousel-next"></div>
+    <div class="clean"></div>
+</div>
+<div>    
+
 </div>
 {% endblock %}

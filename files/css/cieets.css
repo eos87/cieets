@@ -45,3 +45,45 @@ img{
     -webkit-box-shadow: 0px 1px 3px #959595;
     box-shadow: 0px 1px 8px #959595;
 }
+.carrusel #carrusel-container{    
+    float: left;
+    margin-top: 12px !important;
+    width: 860px;
+}
+#carrusel-container ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.carrusel-button-prev, .carrusel-button-next{
+    float: left;        
+    width: 24px;
+    height: 24px;
+    background: url(/files/img/carrusel-sprite.png) no-repeat;
+    margin-top: 45px;
+    cursor: pointer;    
+}
+.carrusel-button-next{
+    background-position: -24px 0;
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.carrusel-button-next:hover{
+    background-position: -24px -24px;
+}
+.carrusel-button-prev{
+    margin-left: 10px;
+    margin-right: 10px;    
+}
+.carrusel-button-prev:hover{
+    background-position: 0px -24px;
+}
+.carrusel .carrusel-item{
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.jcarousel-item {
+    width: 122px;
+}

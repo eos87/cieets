@@ -44,7 +44,7 @@
     font-size: 14px;
     text-decoration: none;
     display: block;
-    padding: 5px 0 5px 10px;
+    padding: 5px 10px 5px 10px;
 }
 #nav a.lvl2:hover{
     color: #fff;
