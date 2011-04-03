@@ -7,8 +7,8 @@
         <link type="text/css" rel="stylesheet"  href="/files/css/cieets.css">
         <link type="text/css" rel="stylesheet"  href="/files/css/nav.css">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script src="/files/js/cufon-yui.js" type="text/javascript"></script>
-        <script src="/files/js/libertine.font.js" type="text/javascript"></script>        
+        <!--<script src="/files/js/cufon-yui.js" type="text/javascript"></script>
+        <script src="/files/js/libertine.font.js" type="text/javascript"></script>-->
         <script type="text/javascript">
             function mainmenu(){
                 var elems = $('.nivel2');
@@ -41,7 +41,7 @@
         {% block extrahead %}{% endblock %}        
     </head>
     <body>
-        
+
         <div id="header">
             <div class="wrapper">
                 <div class="logo"><a href="/"><img src="/files/img/logo-cieets.png" alt="Cieets Logo"></a></div>                
@@ -55,8 +55,21 @@
         <div id="contenido">
             <div class="wrapper">
                 {% block contenido %}{% endblock %}
+                <div class="clean"></div>
             </div>
         </div>
-        <div id="footer"></div>        
+        <div id="footer">
+            <div class="wrapper">
+                <div class="logo-footer">
+                    <a href="/"><img src="/files/img/logo-footer.png" alt="CIEETS Logo"></a>
+                </div>
+                <div class="info">
+                    <b>Centro Intereclesial de Estudios Teológicos y Sociales (CIEETS)</b><br>
+                    Teléfonos: (505) 22673033/34 Fax: (505) 22671010<br>
+                    E-Mail: cieets@cieets.org.ni<br>
+                    <a href="/contact/">Contactarnos</a>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

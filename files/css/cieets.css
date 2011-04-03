@@ -23,10 +23,42 @@ img{
     background: url(/files/img/test.png) no-repeat;
     height: 140px;
 }
+.supercontent{
+    -moz-box-shadow: 0px 3px 3px #ccc;
+    -webkit-box-shadow: 0px 3px 3px #ccc;
+    box-shadow: 0px 3px 3px #ccc;
+}
 .logo{
     float: left;
     margin-left: 15px;
     margin-top: 10px;
+}
+#footer{
+    height: 110px;
+    background: url(/files/img/footer.png) repeat-x bottom;
+    margin-top: 15px;
+}
+#footer .logo-footer{
+    float: left;
+    width: 60px;
+    margin-left: 10px;
+}
+#footer .info{
+    margin-left: 10px;
+    margin-top: 6px;
+    float: left;
+    font-family: "Trebuchet MS", sans-serif;
+    color: #626262;
+    font-size: 11px;
+}
+#footer a{
+    color: #55879d;
+    font-size: 14px;
+    font-family: "Times New Roman", sans-serif;
+    text-decoration: none;
+}
+#footer a:hover{
+    text-decoration: underline;
 }
 #navigation{
     border-top: 1px #fff solid;
@@ -37,6 +69,7 @@ img{
     height: 115px;
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 16px;
     background: #fff;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -45,10 +78,10 @@ img{
     -webkit-box-shadow: 0px 1px 3px #959595;
     box-shadow: 0px 1px 8px #959595;
 }
-.carrusel #carrusel-container{    
+#carrusel-container{    
     float: left;
     margin-top: 12px !important;
-    width: 860px;
+    width: 885px;
 }
 #carrusel-container ul{
     list-style: none;
@@ -66,24 +99,50 @@ img{
 .carrusel-button-next{
     background-position: -24px 0;
     float: right;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 5px;
+    margin-left: 2px;
 }
 .carrusel-button-next:hover{
     background-position: -24px -24px;
 }
 .carrusel-button-prev{
-    margin-left: 10px;
-    margin-right: 10px;    
+    margin-left: 5px;
+    margin-right: 2px;
 }
 .carrusel-button-prev:hover{
     background-position: 0px -24px;
 }
-.carrusel .carrusel-item{
+.carrusel-item{
     float: left;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.carrusel-item img{
+    border: 2px #ccc solid;
+}
+.carrusel-item img:hover{
+    border: 2px #959595 solid;
 }
 .jcarousel-item {
     width: 122px;
+}
+#cuerpo{    
+    width: 743px;
+    background: #fff;
+    height: 200px;
+    float: left;
+    border-right: 1px #c3b79b solid;
+}
+#sidebar{    
+    width: 216px;
+    background: #e5e0d4;
+    height: 200px;
+    float: left;
+}
+.social div{
+    float: left;
+    font-size: 12px;
+    color: #888888;
+    width: 45px;
+    margin-top: 10px;
 }

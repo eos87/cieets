@@ -1,18 +1,19 @@
-function mycarousel_initCallback(carousel) {
-    $('#mycarousel-next').click(function() {
-        carousel.next();
-        return false;
-    });
-    $('#mycarousel-prev').click(function() {
-        carousel.prev();
-        return false;
-    });
-};
 $(document).ready(function(){
-    $("#fotocarrusel").jcarousel({
-        scroll: 5,
-        initCallback: mycarousel_initCallback,
-        buttonNextHTML: null,
-        buttonPrevHTML: null
+    $("#carrusel-container").carousel( {
+        dispItems: 3,
+        loop: 'true',
+        prevBtn: '<div class="carrusel-button-prev" id="#mycarousel-prev"></div>',
+        nextBtn: '<div class="carrusel-button-next" id="#mycarousel-next"></div>',
+        btnsPosition: 'outside'
     });
+    $("a[rel=example_group]").fancybox({
+        'transitionIn'	: 'elastic',
+        'transitionOut'	: 'elastic',
+        'overlayColor': '#000',
+        'titlePosition': 'over',
+        'titleFormat': function(title, currentArray, currentIndex, currentOpts) {
+            return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+        }
+    });
+
 });
