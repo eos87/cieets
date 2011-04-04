@@ -15,10 +15,12 @@
 #nav ul.nivel2{
     position: absolute;
     top: 40px;
-    background: url(/files/img/nav-hover-back.png) repeat-x;    
+    background: url(/files/img/nav-hover-back.png) repeat-x;
+    z-index: 999;
 }
 #nav ul li{
-    float: left;    
+    float: left;
+    min-width: 140px;
 }
 /*Esto a partir del cuarto menu para alinear hacia el otro lado*/
 #cuarto{
@@ -29,7 +31,7 @@
 }
 #nav a.lvl1{
     font-size: 13px;    
-    color: #fff;
+    color: #fff !important;
     display: block;
     width: 130px;
     text-align: center;
@@ -40,14 +42,14 @@
     padding-right: 5px;
 }
 #nav a.lvl2{
-    color: #d1dde0;
+    color: #d1dde0 !important;
     font-size: 14px;
     text-decoration: none;
     display: block;
     padding: 5px 10px 5px 10px;
 }
 #nav a.lvl2:hover{
-    color: #fff;
+    color: #fff !important;
 }
 .nivel2{
     min-height: 40px;
@@ -63,7 +65,7 @@
 }
 .nivel3 a{
     display: block;
-    color: #a4d1e7;
+    color: #a4d1e7 !important;
     font-size: 13px;
     text-decoration: none;
     padding: 5px 10px 5px 18px;

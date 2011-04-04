@@ -6,38 +6,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" rel="stylesheet"  href="/files/css/cieets.css">
         <link type="text/css" rel="stylesheet"  href="/files/css/nav.css">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <!--<script src="/files/js/cufon-yui.js" type="text/javascript"></script>
-        <script src="/files/js/libertine.font.js" type="text/javascript"></script>-->
-        <script type="text/javascript">
-            function mainmenu(){
-                var elems = $('.nivel2');
-                for(var i=0;i<elems.length;i++){
-                    var ancho = 0;
-                    var hijos = $(elems[i]).children();
-                    for(var j=0; j<hijos.length;j++){
-                        ancho += $(hijos[j]).width();
-                    }
-                    $(elems[i]).width(ancho);
-                }
-                $('.nivel2').each(function(){
-                    var ancho = 0;
-                    $(this).children().each(function(){
-                        ancho += $(this).width();
-                    });
-                    $(this).css('width', ancho+'px');
-                });
-                $("#nav ul").css({display: "none"}); // Opera Fix
-                $("#nav li").hover(function(){                    
-                    $(this).find('ul:first').css({visibility: "visible",display: "none"}).show(600);
-                },function(){
-                    $(this).find('ul:first').css({visibility: "hidden"});
-                });
-            }
-            $(document).ready(function(){
-                mainmenu();                
-            });
-        </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+        <script src="/files/js/cufon-yui.js" type="text/javascript"></script>
+        <script src="/files/js/libertine.font.js" type="text/javascript"></script>
+        <script src="/files/js/cieets.js" type="text/javascript"></script>
         {% block extrahead %}{% endblock %}        
     </head>
     <body>

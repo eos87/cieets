@@ -30,11 +30,9 @@
 {% endifequal %}
 
 
-{% ifequal menu_type "vertical" %}
-<ol>
+{% ifequal menu_type "amigos" %}
     {% for menu_item in menu.root_item.children %}
-    {% show_menu_item menu_item %}
+    <a class="enlace-amigo" href="{{menu_item.url}}">{{menu_item.caption}}</a>
     {% endfor %}
-</ol>
 {% endifequal %}
 

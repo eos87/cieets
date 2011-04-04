@@ -14,6 +14,9 @@ img{
     outline: none;
     border: none;
 }
+a{
+    outline: none;
+}
 #header{
     background: #232f43 url(/files/img/sombra.png) repeat-y center;
     height: 140px;
@@ -126,23 +129,286 @@ img{
 .jcarousel-item {
     width: 122px;
 }
+.supercontent{
+    background: #fff; 
+}
 #cuerpo{    
-    width: 743px;
-    background: #fff;
-    height: 200px;
+    width: 743px;    
+    float: left;    
+}
+.caps{
+    position: relative;
+    top: 1px;
+}
+.leftbar{
+    width: 235px;
     float: left;
-    border-right: 1px #c3b79b solid;
+    margin: 12px 5px 0px;
+}
+.leftbar-title{
+    font-size: 17px;
+    color: #a1b059;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.center{
+    float: left;
+    width: 486px;
+    margin: 12px 5px 0px 7px;
+}
+.center-title{
+    font-size: 17px;
+    color: #4893a4;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    float: left;
+}
+.ver-todos{
+    font-family: "Times New Roman", "Trebuchet MS", sans-serif;
+    font-size: 14px;
+    float: right;
+    background: url(/files/img/todas-noticias.png) no-repeat right;
+    padding-right: 18px;
+    margin-right: 10px;
+}
+.noticia-index{
+    font-size: 11px;
+    color: #6e6e6e;
+    font-family: "Trebuchet MS", sans-serif;
+    border-bottom: 1px #c4dfe5 solid;
+    margin-bottom: 10px;
+}
+.noticia-info{
+    float: left;
+    width: 230px;
+    margin-right: 10px;
+}
+.noticia-title{
+    color: #586060 !important;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none !important;
+}
+.noticia-desc{
+    margin-top: 5px;
+}
+.noticia-imagen{
+    float: left;
+    width: 231px;
+}
+.noticia-caption{
+    position: relative;
+    height: 21px;
+    top: -18px;
+    background: url(/files/img/caption-back.png) repeat-x;
+    font-size: 12px;
+    text-align: right;
+}
+.noticia-caption a{
+    color: #1f2f37 !important;
+    line-height: 21px;
+    font-weight: bold;
+}
+.noticia-caption a:hover{
+    color: #fff !important;
+    text-decoration: none;
+}
+.ultimas-noticias{
+    border-bottom: 1px #c4dfe5 solid;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 12px;
+}
+.noticia-detalle{
+    width: 220px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 10px;    
+    font-family: "Trebuchet MS", sans-serif;
+}
+.noticia-detalle img{
+    float: left;
+    margin-right: 10px;    
+}
+.noticia-detalle .fecha{
+    font-family: "Times New Roman", "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    color: #555753;
+    display: block;
+    margin-bottom: 3px;
+}
+.noticia-detalle .cat{
+    font-style: italic;
+}
+.noticia-detalle .cat:hover{
+    text-decoration: none;
+}
+.noticia-detalle .nombre-noticia{
+    color: #586060 !important;
+    font-weight: bold;
+}
+.ultimos-eventos{
+    margin-top: 10px;
+}
+.zonas-title{
+    font-size: 17px;
+    color: #a3984d;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    margin-top: 5px;
+}
+.evento-title{
+    font-size: 17px;
+    color: #4893a4;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    float: left;
+}
+.evento-detalle{
+    border-bottom: 1px #c4dfe5 solid;
+    font-family: "Trebuchet MS", sans-serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: #586060;
+    font-size: 12px;
+}
+.evento-nombre{
+    color: #586060 !important;
+    font-size: 12px;
+    font-weight: bold;
+}
+.evento-detalle .fecha{
+    font-size: 15px;
+    color: #55879d;
+    font-family: "Times New Roman", "Trebuchet MS", sans-serif;
+    display: block;
+    margin-bottom: 5px;
+}
+.evento-detalle .lugar{
+    display: block;
+    float: right;
+    margin: 1px 5px 3px 0px;
+}
+.ver-eventos{
+    background: url(/files/img/calendar.gif) no-repeat right;
+    padding-right: 25px;
+}
+.hora{
+    font-size: 15px;
+    color: #adb96e;
+    font-family: "Trebuchet MS", sans-serif;
+}
+.hora img{
+    float: right;
+    padding: 2px;
+    margin-top: -15px;
+}
+.hora b{
+    color: #3b4041;
+    font-size: 14px;
+}
+.hora span{
+    color: #6d7677;
+    font-size: 12px;
+}
+.mapa{
+    border: 2px #e3e1d1 solid;
+    margin-top: 5px;
 }
 #sidebar{    
     width: 216px;
-    background: #e5e0d4;
-    height: 200px;
+    background: #e5e0d4;    
     float: left;
+    font-family: "Trebuchet MS", sans-serif;
+    border-left: 1px #c3b79b solid;
 }
 .social div{
     float: left;
     font-size: 12px;
     color: #888888;
-    width: 45px;
+    width: 30%;
     margin-top: 10px;
+    text-align: center;    
+}
+.sidebar-module{
+    clear: both;
+    width: 207px;
+    margin-left: 4px;
+    background: #fff;
+    margin-top: 10px;    
+}
+#tabs{
+    border: none;
+    font-family: "Trebuchet MS", sans-serif !important;
+}
+#tabs ul{
+    border: none;
+    background: none;
+}
+#tabs ul li{
+    border: 1px #e5e0d4 solid;    
+}
+#tabs #fragment-1, #tabs #fragment-2, #tabs #fragment-3{
+    border: 1px #e5e0d4 solid;
+}
+.sidebar-module-title{
+    width: 100%;
+    height: 25px;
+    background: url(/files/img/sidebar-title-back.png) no-repeat;
+    padding-left: 25px;
+    font-size: 12px;
+    line-height: 25px;
+    font-weight: bold;
+}
+.sidebar-module .portada{
+    float: left;
+    width: 68px;    
+    margin-right: 5px;
+}
+.sidebar-module .datos{
+    color: #6d7677;
+    float: left;
+    width: 95px;
+}
+a{
+    color: #4893a4 !important;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.sidebar-module .datos a{
+    color: #4893a4;
+    text-decoration: none;
+}
+.sidebar-module .datos a:hover{
+    text-decoration: underline;
+}
+.sidebar-module-content{
+    font-size: 0.7em;
+    color: #6d7677;
+    padding: 6px;
+}
+.sidebar-module-content .fecha{
+    color: #4893a4;
+}
+.sidebar-module-content b{
+    color: #586060;
+}
+.leer-mas{
+    float: right; margin-top: 3px;
+}
+.enlace-amigo{
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px #929292 dashed;
+    color: #586060 !important;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 3px;
+}
+.enlace-amigo:hover{
+    color: #4893a4 !important;
+    text-decoration: none;
 }
