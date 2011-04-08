@@ -1,5 +1,6 @@
 settings_local.py
 nbproject/
+usermedia/
 *.pyc
 *.html~
 *.py~
