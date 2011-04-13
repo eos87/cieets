@@ -11,7 +11,7 @@ $(document).ready(function(){
         }
     });
 });
-jQuery(window).load(function(){
+$(window).load(function(){
     $("#carrusel-container").carousel( {
         dispItems: 3,
         loop: 'true',

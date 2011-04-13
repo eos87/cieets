@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<playlist>
+    {% for rola in canciones %}
+    <item>
+        <title>{{rola.titulo}}</title>
+        <artist>{{rola.artista}}</artist>
+        <path>{{rola.archivo.url}}</path>
+    </item>
+    {% endfor %}
+</playlist>

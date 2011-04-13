@@ -10,7 +10,7 @@ class FotoPortada(models.Model):
     nombre = models.CharField(max_length=100)
     archivo = ImageWithThumbsField(upload_to=get_file_path, sizes=((122, 91), ), help_text='Formatos: .jpg .png .gif')    
 
-    fileDir = 'multimedia/carrusel/'
+    fileDir = 'multimedia/portada/'
 
     def __unicode__(self):
         return u'%s' % self.nombre
@@ -45,3 +45,17 @@ class Video(models.Model):
 
     class Meta:
         verbose_name_plural = u'Videos'
+
+class Musica(models.Model):
+    titulo = models.CharField(max_length=100)
+    artista = models.CharField(max_length=100)
+    archivo = models.FileField(upload_to=get_file_path, help_text='Formato: .mp3')
+
+    fileDir = 'multimedia/musica/'
+
+    def __unicode__(self):
+        return u'%s' % self.titulo
+
+    class Meta:
+        verbose_name = u'Música'
+        verbose_name_plural = u'Música'

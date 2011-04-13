@@ -86,6 +86,9 @@ a{
     margin-top: 12px !important;
     width: 885px;
 }
+#fotocarrusel{
+    width: 885px !important;
+}
 #carrusel-container ul{
     list-style: none;
     padding: 0;
@@ -125,9 +128,6 @@ a{
 }
 .carrusel-item img:hover{
     border: 2px #959595 solid;
-}
-.jcarousel-item {
-    width: 122px;
 }
 .supercontent{
     background: #fff; 
@@ -411,4 +411,7 @@ a:hover{
 .enlace-amigo:hover{
     color: #4893a4 !important;
     text-decoration: none;
+}
+#radioplayer{
+    margin-top: -10px;
 }
