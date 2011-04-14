@@ -216,9 +216,11 @@
 <script type="text/javascript">
 	var options = {};
 	options.playlistXmlPath = "/playlist.xml";
+        options.menu = "false";
 
 	var params = {};
 	params.allowScriptAccess = "always";
+        params.wmode = "transparent";
 	swfobject.embedSWF("/files/js/player/playlist.swf", "playlistplayer", "235", "240", "9.0.0",false, options, params, {});
 </script>
 {% endblock %}

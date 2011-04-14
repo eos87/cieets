@@ -415,3 +415,7 @@ a:hover{
 #radioplayer{
     margin-top: -10px;
 }
+#playlistplayer{
+    position: relative;
+    z-index: 1;
+}

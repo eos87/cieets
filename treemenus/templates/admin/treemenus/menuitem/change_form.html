@@ -8,24 +8,25 @@ Note the "super.super", as the direct parent has the wrong url.
 {% endcomment %}
 {% block extrahead %}{{ block.super.super }}
 <script type="text/javascript" src="../../../../../jsi18n/"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="/files/js/chicle.js"></script>
 {{ media }}
 {% endblock %}
 
 
 {% block breadcrumbs %}
 <div class="breadcrumbs">
-	{% if add %}
-	    <a href="../../../../../">{% trans "Home" %}</a> &rsaquo;
-	    <a href="../../../">{% trans "Menus" %}</a> &rsaquo;
-	    <a href="../../">{{ menu.name }}</a> &rsaquo;
-		{% trans 'Add Item' %}
-	{% else %}
+{% if add %}
+<a href="../../../../../">{% trans "Home" %}</a> &rsaquo;
+<a href="../../../">{% trans "Menus" %}</a> &rsaquo;
+<a href="../../">{{ menu.name }}</a> &rsaquo;
+{% trans 'Add Item' %}
+{% else %}
         <a href="../../../../../">{% trans "Home" %}</a> &rsaquo;
-	    <a href="../../../">{% trans "Menus" %}</a> &rsaquo;
-	    <a href="../../">{{ menu.name }}</a> &rsaquo;
-		{% trans 'Items' %} &rsaquo;
-		{{ original|escape|truncatewords:"18" }}
-	{% endif %}
+<a href="../../../">{% trans "Menus" %}</a> &rsaquo;
+<a href="../../">{{ menu.name }}</a> &rsaquo;
+{% trans 'Items' %} &rsaquo;
+{{ original|escape|truncatewords:"18" }}
+{% endif %}
 </div>
 {% endblock %}
-
