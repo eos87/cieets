@@ -60,7 +60,7 @@ class Noticia(models.Model):
     fecha = models.DateTimeField(default=datetime.datetime.now())
     categoria = models.ForeignKey(Categoria)
     autor = models.CharField(max_length=200)
-    imagen = ImageWithThumbsField(upload_to=get_file_path, sizes=((225, 168), ), help_text='Formatos: .jpg .png .gif')
+    imagen = ImageWithThumbsField(upload_to=get_file_path, sizes=((225, 168), (231, 174)), help_text='Formatos: .jpg .png .gif')
     contenido = models.TextField()
     slug = models.SlugField(max_length=250, editable=False)
     comentario = generic.GenericRelation(Comentario)
