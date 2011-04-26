@@ -24,3 +24,6 @@ def noticias(request):
 def noticia_detail(request, slug):
     noticia = get_object_or_404(Noticia, slug=slug)
     return render_to_response('contenido/noticia_detail.html', RequestContext(request, locals()))
+
+def publicaciones(request):
+    return render_to_response('contenido/publicaciones.html', RequestContext(request, locals()))
