@@ -30,6 +30,7 @@ a{
     -moz-box-shadow: 0px 3px 3px #ccc;
     -webkit-box-shadow: 0px 3px 3px #ccc;
     box-shadow: 0px 3px 3px #ccc;
+    margin-top: 15px;
 }
 .logo{
     float: left;
@@ -371,7 +372,7 @@ a{
     width: 95px;
 }
 a{
-    color: #4893a4 !important;
+    color: #4893a4;
     text-decoration: none;
 }
 a:hover{
@@ -418,4 +419,208 @@ a:hover{
 #playlistplayer{
     position: relative;
     z-index: 1;
+}
+.pagina-title{
+    color: #a3984d;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+.pagina-contenido{
+    font-size: 11px;
+    color: #6e6e6e;
+    margin-top: 15px;    
+    padding-right: 6px;
+}
+.leftmenubar{
+    float: left;    
+    margin-right: 10px;    
+    width: 185px;    
+    background: url(/files/img/leftmenubar.png) repeat-y;
+}
+.leftmenubar .title{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    background: url(/files/img/leftmenubar-title.png) no-repeat;
+    width: 173px;
+    padding: 6px;
+}
+ul.nivel1left{    
+    font-size: 13px;
+    font-weight: bold;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 25px;
+    margin-top: 10px;
+    list-style-image: url(/files/img/arrow.png);
+}
+ul.nivel1left li{
+    padding: 2px 2px 2px 0px;
+}
+ul.nivel1left li a{
+    color: #bbbab8;
+    font-family: "Trebuchet MS", sans-serif;
+    text-decoration: none;
+}
+ul.nivel1left li a:hover{
+    color: #fff;
+}
+ul.nivel1left li ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 10px;
+    font-weight: normal;
+}
+ul.nivel1left li ul li{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.menuselecto{
+    background: #605d5c;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    padding: 2px 10px;
+    color: #fff !important;
+    -moz-box-shadow: 0px 1px 2px #000;
+    -webkit-box-shadow: 0px 1px 2px #000;
+    box-shadow: 0px 1px 2px #000;
+}
+.separadorleft{    
+    margin-left: -25px;
+    margin-top: -6px !important;
+    padding: 0px 2px 0px 0px !important;
+    list-style: none;
+}
+.primerseparador{
+    margin-left: -35px;
+}
+.noticias-categorias{
+    background: #d7e9ed;
+    width: 712px;
+    margin-top: 10px;
+}
+.categoria{
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: bold;
+    float: left;
+    background: url(/files/img/cat-button-back.png) repeat-x;
+    padding: 0px 8px;
+    display: block;
+    margin: 7px 10px;
+    color: #444444;
+    text-decoration: none !important;
+    font-size: 13px;
+    height: 25px;
+    line-height: 27px;
+    border: 1px #fff solid;
+    -moz-box-shadow: 0px 2px 2px #959595;
+    -webkit-box-shadow: 0px 2px 2px #959595;
+    box-shadow: 0px 2px 2px #959595;
+}
+.categoria:hover{
+    color: #808080;    
+}
+.categoria-selecta{
+    color: #485E8A;
+}
+.noticia-lista{
+    margin-top: 10px;
+    font-family: "Trebuchet MS", sans-serif;
+}
+.noticia-lista-detalle{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px #929292 dotted;
+    width: 712px;
+}
+.noticia-lista-imagen{
+    float: left;
+    padding-right: 10px;
+}
+.noticia-lista-datos{
+    float: left;
+}
+.noticia-lista-title a{
+    font-size: 15px;
+    color: #586060;
+}
+.noticia-lista-categoria{
+    font-family: "Times New Roman", sans-serif;
+    color: #81a5ae;
+    font-style: italic;
+    padding-top: 3px;
+    padding-bottom: 5px;
+}
+.noticia-lista-fecha{
+    font-family: "Times New Roman", sans-serif;
+    color: #555753;
+    font-size: 13px;
+}
+.noticia-lista-leer-mas{
+    background: url(/files/img/leer-mas.png) no-repeat;
+    display: block;
+    width: 85px;
+    height: 25px;
+    color: #555753;
+    float: right;
+    margin-top: 50px;
+    margin-right: 20px;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+.pagination{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 13px;
+}
+.pagination .page{        
+    background: #f1eee4;
+    padding: 2px 6px;
+    font-family: "Trebuchet MS", sans-serif;
+}
+.noticia-imagen{
+    margin-left: 8px;
+    margin-top: 15px;
+    background: url(/files/img/noticia-imagen-sombra.png) bottom;
+    padding-bottom: 12px;
+}
+.noticia-bar{
+    float: left;
+    background: url(/files/img/noticia-bar-back.png) repeat-y;
+    width: 247px;
+    padding-bottom: 20px;
+    margin-right: 12px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+.noticia-descripcion{
+    font-family: "Trebuchet MS", sans-serif;
+    float: left;
+    font-size: 13px;
+    color: #6e6e6e;
+    width: 450px;
+}
+.adjuntos{
+    color: #fff;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.adjunto-title{    
+    color: #d6e195;
+}
+.adjunto-descargar{
+    color: #d7d9da;
+    font-style: italic;
+    font-family: "Times New Roman", sans-serif;
 }

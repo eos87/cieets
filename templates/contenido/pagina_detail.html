@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load tree_menu_tags %}
+
+{% block title %}{{pagina.titulo}}{% endblock %}
+
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 522px;
+    }    
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+    $(window).load(function(){
+        var sidebar = $('.leftmenubar').height();
+        var cuerpo = $('#cuerpo').height();        
+        if(cuerpo>=sidebar){
+            $('.leftmenubar').height(cuerpo);
+            console.log($('.leftmenubar').height());
+        }else{
+            $('#cuerpo').height(sidebar);
+        }
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="leftmenubar">
+    <div class="title">{{pagina.menuitem.parent.parent}}</div>
+    {% show_menu "Principal" "pagina" %}
+</div>
+<div class="center">
+    <div class="pagina-title">{{pagina.titulo}}</div>
+    <img src="/files/img/pagina-separador.png" alt="Cieets">
+    <div class="pagina-contenido">
+        {{pagina.contenido|safe}}
+    </div>
+    <br><br>
+</div>
+<div class="clean"></div>
+{% endblock %}

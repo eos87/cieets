@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load pagination_tags %}
+
+{% block title %}Noticias{% endblock %}
+
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">Noticias</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <div class="noticias-categorias">
+        {% for categoria in categorias %}
+        <a href="/noticias/?cat={{categoria.pk}}" class="categoria {% if selecta == categoria.id %}categoria-selecta{% endif %}">{{categoria.nombre}}</a>
+        {% endfor %}
+        <div class="clean"></div>
+    </div>
+    {% autopaginate noticias 8 %}
+    <div class="noticia-lista">
+        {% for noticia in noticias %}
+        <div class="noticia-lista-detalle">
+            <a href="{{noticia.get_absolute_url}}"><img class="noticia-lista-imagen" src="{{noticia.imagen.url_180x86}}" alt="{{noticia.titulo}}"></a>
+            <div class="noticia-lista-datos">
+                <div class="noticia-lista-title"><a href="{{noticia.get_absolute_url}}">{{noticia.titulo}}</a></div>
+                <div class="noticia-lista-categoria">Categoria: <a href="/noticias/?cat={{noticia.categoria.id}}">{{noticia.categoria.nombre}}</a></div>
+                <div class="noticia-lista-fecha">{{noticia.fecha|date:"d F Y"}}</div>
+            </div>
+            <a href="{{noticia.get_absolute_url}}" class="noticia-lista-leer-mas">Leer Mas</a>
+            <div class="clean"></div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    {% paginate %}
+    <br>
+</div>
+{% endblock %}

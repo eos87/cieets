@@ -5,30 +5,53 @@
 <ul class="nivel1" id="nav">
     {% for menu_item in menu.root_item.children %}    
     {% if menu_item.has_children %}
-    <li><a class="lvl1" href="{{ menu_item.url }}">{{ menu_item.caption }}</a>
+    <li><a class="lvl1" href="{% if menu_item.tipo == 1 %}{{ menu_item.url }}{% else %}{{menu_item.pagina.get_absolute_url}}{% endif %}">{{ menu_item.caption }}</a>
         <ul class="nivel2">
             {% for child in menu_item.children %}            
             {% if child.has_children %}
-            <li><a class="lvl2" href="{{ child.url }}">{{ child.caption }}</a>
+            <li><a class="lvl2" href="{% if child.tipo == 1 %}{{ child.url }}{% else %}{{child.pagina.get_absolute_url}}{% endif %}">{{ child.caption }}</a>
                 <div class="nivel3">                    
                     {% for subchild in child.children %}
-                    <a href="{{ subchild.url }}">{{ subchild.caption }}</a>
+                    <a href="{% if subchild.tipo == 1 %}{{ subchild.url }}{% else %}{{subchild.pagina.get_absolute_url}}{% endif %}">{{ subchild.caption }}</a>
                     {% endfor %}                    
                 </div>
             </li>
             {% else %}
-            <li><a class="lvl2" href="{{ child.url }}">{{ child.caption }}</a></li>
+            <li><a class="lvl2" href="{% if child.tipo == 1 %}{{ child.url }}{% else %}{{child.pagina.get_absolute_url}}{% endif %}">{{ child.caption }}</a></li>
             {% endif %}
             {% endfor %}
         </ul>
     </li>
     {% else %}
-    <li><a class="lvl1" href="{{ menu_item.url }}">{{ menu_item.caption }}</a></li>
+    <li><a class="lvl1" href="{% if menu_item.tipo == 1 %}{{ menu_item.url }}{% else %}{{menu_item.pagina.get_absolute_url}}{% endif %}">{{ menu_item.caption }}</a></li>
     {% endif %}
     {% endfor %}
 </ul>
 {% endifequal %}
 
+
+{% ifequal menu_type "pagina" %}    
+    {% for menu_item in menu.root_item.children %}    
+    {% if menu_item == pagina.menuitem.parent.parent %}
+    <ul class="nivel1left">        
+        {% for child in menu_item.children %}        
+        <li>
+            <a {% if child.pagina %}href="{{child.pagina.get_absolute_url}}" {% if child.pagina.get_absolute_url == pagina.get_absolute_url %}class="menuselecto"{% endif %}{% else %}href="{{child.url}}"{% endif %}>{{child.caption}}</a>
+            <ul>
+            {% for subchild in child.children %}
+            {% if forloop.first %}
+            <li class="separadorleft primerseparador"><img src="/files/img/separadorleft.png" alt="separador"></li>
+            {% endif %}
+            <li><a {% if subchild.pagina %}href="{{subchild.pagina.get_absolute_url}}" {% if subchild.pagina.get_absolute_url == pagina.get_absolute_url %}class="menuselecto"{% endif %}{% else %}href="{{subchild.url}}"{% endif %} href="{{subchild.url}}">{{subchild.caption}}</a></li>
+            {% endfor %}            
+            </ul>            
+        </li>
+        <li class="separadorleft"><img src="/files/img/separadorleft.png" alt="separador"></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+{% endifequal %}
 
 {% ifequal menu_type "amigos" %}
     {% for menu_item in menu.root_item.children %}

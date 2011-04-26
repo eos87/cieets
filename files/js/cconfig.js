@@ -1,6 +1,4 @@
 $(document).ready(function(){    
-    $("#tabs").tabs();
-
     $("a[rel=example_group]").fancybox({
         'transitionIn'	: 'elastic',
         'transitionOut'	: 'elastic',

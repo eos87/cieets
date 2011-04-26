@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Noticias | {{noticia.titulo}}{% endblock %}
+
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+    .noticia-lista-fecha{
+        color: #3b3d3f;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">{{noticia.titulo}}</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <br><br>
+    <div class="noticia-bar">
+        <img src="{{noticia.imagen.url_225x168}}" alt="{{noticia.titulo}}" class="noticia-imagen"><br>
+        <div class="adjuntos">
+            Documentos Adjuntos<br><br>
+            {% for adjunto in noticia.adjunto.all %}
+            <span class="adjunto-title">{{adjunto.nombre}}</span><br>
+            <a href="{{adjunto.archivo.url}}" class="adjunto-descargar">Descargar</a><br><br>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="noticia-descripcion">
+        <div class="noticia-lista-fecha">{{noticia.fecha|date:"d F Y"}}</div>
+        {{noticia.contenido|safe}}
+    </div>
+    <div class="clean"></div>
+</div>
+{% endblock %}

@@ -2,9 +2,26 @@
 from django.db import models
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
+from django.template.defaultfilters import slugify
 from cieets.utils import get_file_path
 from cieets.thumbs import ImageWithThumbsField
 import datetime
+
+class Adjunto(models.Model):
+    content_type = models.ForeignKey(ContentType)
+    object_id = models.IntegerField(db_index=True)
+    content_object = generic.GenericForeignKey()
+
+    nombre = models.CharField(max_length=100)
+    archivo = models.FileField(upload_to=get_file_path)
+
+    fileDir = 'contenido/attachments/'
+
+    def __unicode__(self):
+        return u'%s' % self.nombre
+
+    class Meta:
+        verbose_name_plural = u'Adjuntos'
 
 class Comentario(models.Model):
     content_type = models.ForeignKey(ContentType)
@@ -60,10 +77,11 @@ class Noticia(models.Model):
     fecha = models.DateTimeField(default=datetime.datetime.now())
     categoria = models.ForeignKey(Categoria)
     autor = models.CharField(max_length=200)
-    imagen = ImageWithThumbsField(upload_to=get_file_path, sizes=((225, 168), (231, 174)), help_text='Formatos: .jpg .png .gif')
+    imagen = ImageWithThumbsField(upload_to=get_file_path, sizes=((78, 81), (180, 86), (225, 168), (231, 174)), help_text='Formatos: .jpg .png .gif')
     contenido = models.TextField()
     slug = models.SlugField(max_length=250, editable=False)
     comentario = generic.GenericRelation(Comentario)
+    adjunto = generic.GenericRelation(Adjunto)
 
     fileDir = 'contenido/noticia/'
 
@@ -82,6 +100,7 @@ class Noticia(models.Model):
         super(Noticia, self).save()
 
     class Meta:
+        ordering = ['-fecha']
         verbose_name = u'Noticia'
         verbose_name_plural = u'Noticias'
 

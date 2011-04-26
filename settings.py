@@ -76,6 +76,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'cieets.pagination.middleware.PaginationMiddleware',
 )
 
 ROOT_URLCONF = 'cieets.urls'
@@ -97,6 +98,7 @@ INSTALLED_APPS = (
     'south',
     'cieets.multimedia',
     'cieets.contenido',
+    'cieets.pagination',
 )
 
 # A sample logging configuration. The only tangible logging
