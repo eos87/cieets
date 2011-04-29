@@ -129,7 +129,7 @@ class Evento(models.Model):
     class Meta:
         verbose_name_plural = u'Eventos'
 
-class RiconLiturgico(models.Model):
+class RinconLiturgico(models.Model):
     titulo = models.CharField(max_length=200)
     fecha = models.DateTimeField(default=datetime.datetime.now())
     autor = models.CharField(max_length=200)
@@ -143,15 +143,32 @@ class RiconLiturgico(models.Model):
         return u'%s' % self.titulo
 
     def get_absolute_url(self):
-        return u'/ricon/%s' % self.slug
+        return u'/ricon-liturgico/%s' % self.slug
 
     def save(self):
         if not self.id:
-            n = RiconLiturgico.objects.all().count()
+            n = RinconLiturgico.objects.all().count()
             self.slug = '%s-%s' % (str(n + 1), slugify(self.titulo))
         else:
             pass
-        super(RiconLiturgico, self).save()
+        super(RinconLiturgico, self).save()
 
     class Meta:
-        verbose_name_plural = u'Ricones Litúrgicos'
+        verbose_name_plural = u'Rincones Litúrgicos'
+
+class Publicacion(models.Model):
+    titulo = models.CharField(max_length=150)
+    categoria = models.IntegerField(choices=((1, u'Boletín'), (2, u'Revista'), (3, u'Módulo')))
+    portada = ImageWithThumbsField(upload_to=get_file_path, sizes=((67, 90), (176, 238)), help_text='Formatos: .jpg .png .gif')
+    fecha = models.DateTimeField(default=datetime.datetime.now())
+    descripcion = models.TextField()
+    archivo = models.FileField(upload_to=get_file_path)
+
+    fileDir = 'contenido/publicaciones/'
+
+    def __unicode__(self):
+        return u'%s' % self.titulo
+
+    class Meta:
+        verbose_name = u'Publicación'
+        verbose_name_plural = u'Publicaciones'

@@ -24,11 +24,18 @@ class EventoAdmin(admin.ModelAdmin):
     save_on_top = True
     actions_on_top = True
 
+class PublicacionAdmin(admin.ModelAdmin):
+    list_display = ['titulo', 'fecha', 'categoria']
+    list_filter = ['categoria', 'fecha']
+    list_per_page = 25
+    save_on_top = True
+    actions_on_top = True
+
 admin.site.register(Noticia, NoticiaAdmin)
 admin.site.register(Evento, EventoAdmin)
 admin.site.register(Pagina)
 admin.site.register(Categoria)
-admin.site.register(RiconLiturgico)
-
+admin.site.register(RinconLiturgico)
+admin.site.register(Publicacion, PublicacionAdmin)
 
 

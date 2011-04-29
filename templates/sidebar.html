@@ -16,30 +16,40 @@
             </ul>
             <div id="fragment-1">
                 <div class="portada">
-                    <img src="/files/img/portada.png" alt="portada">
+                    <img src="{{revista.portada.url_67x90}}" alt="{{revista.titulo}}">
                 </div>
-                <div class="datos">Este seria el titulo de una publicaci&oacute;n ejemplo <br><a href="/">Descargar</a></div>
+                <div class="datos">{{revista.titulo}} <br><a href="{{revista.archivo.url}}">Descargar</a></div>
                 <div class="clean"></div>
                 <br>
-                <a href="#">Ver todas las revistas</a>
+                <a href="/publicaciones/?cat=2">Ver todas las revistas</a>
             </div>
             <div id="fragment-2">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                <div class="portada">
+                    <img src="{{boletin.portada.url_67x90}}" alt="{{boletin.titulo}}">
+                </div>
+                <div class="datos">{{boletin.titulo}} <br><a href="{{boletin.archivo.url}}">Descargar</a></div>
+                <div class="clean"></div>
+                <br>
+                <a href="/publicaciones/?cat=1">Ver todos los boletines</a>
             </div>
             <div id="fragment-3">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                Tab3 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                <div class="portada">
+                    <img src="{{modulo.portada.url_67x90}}" alt="{{modulo.titulo}}">
+                </div>
+                <div class="datos">{{modulo.titulo}} <br><a href="{{modulo.archivo.url}}">Descargar</a></div>
+                <div class="clean"></div>
+                <br>
+                <a href="/publicaciones/?cat=3">Ver todos los m&oacute;dulos</a>
             </div>
         </div>
     </div>
     <div class="sidebar-module">
         <div class="sidebar-module-title">Rinc&oacute;n Lit&uacute;rgico</div>
         <div class="sidebar-module-content">
-            <p class="fecha">2 marzo 2011</p>
-            <b>Este seria el titulo de un rinc&oacute;n lit&uacute;rgico</b><br>
-            Risus quis risus et elementum mus massa montes. Eu enim enim vel nunc amet. Ac scelerisque mid. Montes, ...<br>
-            <a href="#" class="leer-mas">Leer m&aacute;s &raquo;</a>
+            <p class="fecha">{{rincon.fecha|date:"d F Y"}}</p>
+            <b>{{rincon.titulo}}</b><br>
+            {{rincon.contenido|safe}}<br>
+            <a href="{{rincon.get_absolute_url}}" class="leer-mas">Leer m&aacute;s &raquo;</a>
             <div class="clean"></div>
         </div>
     </div>
