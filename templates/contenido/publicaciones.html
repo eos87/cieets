@@ -1,6 +1,54 @@
 {% extends "base.html" %}
+{% load pagination_tags %}
 
 {% block title %}Publicaciones{% endblock %}
 
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
 {% block contenido %}
+<div class="center">
+    <div class="pagina-title">Publicaciones</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <div class="noticias-categorias">
+        <a href="/publicaciones/?cat=1" class="categoria {% if cat == "1" %}categoria-selecta{% endif %}">Revista</a>
+        <a href="/publicaciones/?cat=2" class="categoria {% if cat == "2" %}categoria-selecta{% endif %}">Boletines</a>
+        <a href="/publicaciones/?cat=3" class="categoria {% if cat == "3" %}categoria-selecta{% endif %}">M&oacute;dulos</a>
+        <div class="clean"></div>
+    </div>
+    {% autopaginate publicaciones 8 %}
+    <div class="publicacion-lista">
+        {% for publicacion in publicaciones %}
+        <div class="publicacion-lista-detalle">
+            <div class="publicacion-lista-imagen">                
+                <a href="{{publicacion.get_absolute_url}}"><img src="{{publicacion.portada.url_67x90}}" alt="{{publicacion.titulo}}"></a>
+            </div>
+            <div class="publicacion-lista-links">
+                <a href="{{publicacion.get_absolute_url}}" class="publicacion-lista-titulo">{{publicacion.titulo}}</a><br>
+                <a href="{{publicacion.get_absolute_url}}" class="publicacion-lista-ver">Ver &raquo;</a>
+            </div>
+            <div class="clean"></div>
+        </div>
+    {% endfor %}
+    <div class="clean"></div>
+    </div>
+    <br>
+    {% paginate %}
+    <br>
+</div>
 {% endblock %}

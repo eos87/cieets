@@ -624,3 +624,32 @@ ul.nivel1left li ul li{
     font-style: italic;
     font-family: "Times New Roman", sans-serif;
 }
+.publicacion-lista{
+    margin-top: 10px;
+}
+.publicacion-lista-detalle{
+    float: left;
+    width: 340px;
+    padding-bottom: 10px;
+    border-bottom: 1px #929292 dotted;
+    margin-top: 10px;
+    padding-right: 10px;
+}
+.publicacion-lista-imagen{
+    float: left;
+    width: 80px;
+}
+.publicacion-lista-links{
+    float: left;
+    width: 260px;
+}
+.publicacion-lista-titulo{
+    font-weight: bold;
+    color: #586060 !important;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 14px;
+}
+.publicacion-lista-ver{
+    font-size: 13px;
+    font-family: "Trebuchet MS", sans-serif;
+}

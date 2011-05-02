@@ -158,7 +158,7 @@ class RinconLiturgico(models.Model):
 
 class Publicacion(models.Model):
     titulo = models.CharField(max_length=150)
-    categoria = models.IntegerField(choices=((1, u'Boletín'), (2, u'Revista'), (3, u'Módulo')))
+    categoria = models.IntegerField(choices=((1, u'Revista'), (2, u'Boletín'), (3, u'Módulo')))
     portada = ImageWithThumbsField(upload_to=get_file_path, sizes=((67, 90), (176, 238)), help_text='Formatos: .jpg .png .gif')
     fecha = models.DateTimeField(default=datetime.datetime.now())
     descripcion = models.TextField()
@@ -168,6 +168,9 @@ class Publicacion(models.Model):
 
     def __unicode__(self):
         return u'%s' % self.titulo
+
+    def get_absolute_url(self):
+        return u'/publicaciones/%s' % self.id
 
     class Meta:
         verbose_name = u'Publicación'
