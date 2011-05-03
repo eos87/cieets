@@ -31,11 +31,20 @@ class PublicacionAdmin(admin.ModelAdmin):
     save_on_top = True
     actions_on_top = True
 
+class RinconAdmin(admin.ModelAdmin):
+    list_display = ['titulo', 'fecha', 'autor']
+    list_filter = ['autor', 'fecha']
+    list_per_page = 25
+    save_on_top = True
+    actions_on_top = True
+
+    inlines = [AdjuntoInline, ]
+
 admin.site.register(Noticia, NoticiaAdmin)
 admin.site.register(Evento, EventoAdmin)
 admin.site.register(Pagina)
 admin.site.register(Categoria)
-admin.site.register(RinconLiturgico)
+admin.site.register(RinconLiturgico, RinconAdmin)
 admin.site.register(Publicacion, PublicacionAdmin)
 
 

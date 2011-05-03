@@ -338,6 +338,9 @@ a{
     background: #fff;
     margin-top: 10px;    
 }
+.ui-tabs .ui-tabs-nav li a{
+    padding: 0.4em 0.9em !important;
+}
 #tabs{
     border: none;
     font-family: "Trebuchet MS", sans-serif !important;
@@ -652,4 +655,68 @@ ul.nivel1left li ul li{
 .publicacion-lista-ver{
     font-size: 13px;
     font-family: "Trebuchet MS", sans-serif;
+}
+.publicacion-detalle{
+    margin-top: 10px;
+}
+.publicacion-imagen{
+    float: left;
+    padding-right: 12px;
+    padding-bottom: 6px;
+}
+.publicacion-contenido{   
+    font-family: "Trebuchet MS", sans-serif;
+}
+.publicacion-detalle-categoria{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    color: #586060;
+}
+.publicacion-detalle-texto{
+    color: #6e6e6e;
+    font-size: 11px;
+    margin-top: 5px;
+}
+.publicacion-detalle-descargar{
+    color: #4893a4;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.otra-publicacion{
+    margin-top: 10px;
+    border-bottom: 1px #929292 dotted;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.border-arriba{
+    border-top: 1px #929292 dotted;
+}
+.otra-publicacion img{
+    float: left;
+    padding-right: 10px;
+}
+.otra-publicacion a{
+    font-family: "Trebuchet MS", sans-serif;
+    float: left;
+    margin-top: 20px;
+    color: #586060;
+    font-size: 12px;
+    font-weight: bold;
+}
+.otras-publicaciones{
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.otras-publicaciones span{
+    color: #55879d;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 16px;    
+}
+.rinconplayer span{
+    color: #ede9c9;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 5px;
 }

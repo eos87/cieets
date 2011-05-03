@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load pagination_tags %}
+
+{% block title %}Publicaciones | {{publicacion.titulo}}{% endblock %}
+
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">{{publicacion.titulo}}</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <div class="publicacion-detalle">        
+        <div class="publicacion-contenido">
+            <img class="publicacion-imagen" src="{{publicacion.portada.url_176x238}}" alt="{{publicacion.titulo}}">
+            <span class="publicacion-detalle-categoria">{{categoria}}</span>
+            <div class="publicacion-detalle-texto">{{publicacion.descripcion|safe}}<br><br>
+                <a class="publicacion-detalle-descargar" href="{{publicacion.archivo.url}}">Descargar</a>
+            </div>
+        </div>
+    </div>
+    <div class="clean"></div>
+    {% if otras_publicaciones %}
+    <div class="otras-publicaciones">
+        <span>Otras publicaciones</span>
+        {% for publica in otras_publicaciones %}
+        <div class="otra-publicacion {% if forloop.first %}border-arriba{% endif %}">
+            <img src="{{publica.portada.url_67x90}}" width="50" height="67" alt="{{publica.titulo}}">
+            <a href="{{publica.get_absolute_url}}">{{publica.titulo}}</a>
+            <div class="clean"></div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

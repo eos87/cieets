@@ -136,14 +136,15 @@ class RinconLiturgico(models.Model):
     contenido = models.TextField()
     audio = models.FileField(upload_to=get_file_path, help_text=u'Formato: .mp3', blank=True, null=True)
     slug = models.SlugField(max_length=250, editable=False)
+    adjunto = generic.GenericRelation(Adjunto)
 
-    fileDir = 'contenido/ricon/'
+    fileDir = 'contenido/rincon/'
 
     def __unicode__(self):
         return u'%s' % self.titulo
 
     def get_absolute_url(self):
-        return u'/ricon-liturgico/%s' % self.slug
+        return u'/rincon-liturgico/%s' % self.slug
 
     def save(self):
         if not self.id:
