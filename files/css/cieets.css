@@ -720,3 +720,74 @@ ul.nivel1left li ul li{
     font-weight: bold;
     margin-left: 5px;
 }
+.video-lista-box{
+    width: 222px;
+    height: 266px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: url(/files/img/video-back.png) repeat-x bottom;
+    border: 1px solid #e5e0d4;
+}
+.video-lista-detail{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.video-lista-detalle-link{
+    display: block;
+    width: 200px;
+    border: 1px #ccc solid;
+    margin-bottom: 5px;
+}
+.video-lista-detalle-link:hover{
+    border: 1px #959595 solid;
+}
+.video-lista-titulo, .audio-lista-titulo{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 15px;
+    color: #586060;
+    font-weight: bold;
+}
+.video-detalle{
+    float: left;
+    width: 410px;
+}
+.video-detalle-descripcion{
+    float: left;
+    width: 302px;
+    color: #6e6e6e;
+    font-size: 11px;
+    font-family: "Trebuchet MS", sans-serif;
+}
+.audio-lista-detalle{
+    padding-bottom: 12px;
+    border-bottom: 1px #929292 dotted;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.audio-lista-play{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    background: url(/files/img/play-audio.png) no-repeat right;
+    padding-right: 20px;
+}
+.audio-lista-fecha{
+    font-family: "Times New Roman", sans-serif;
+    font-size: 12px;
+    color: #55879d;
+    line-height: 18px;
+}
+.audio-descripcion{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    color: #6e6e6e;
+}
+#calendar{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 12px;
+}
+#calendar h2{
+    color: #586060;
+}

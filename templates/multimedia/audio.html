@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load pagination_tags %}
+{% load magicembed %}
+
+{% block title %}Audio{% endblock %}
+
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+    .noticia-lista-fecha{
+        color: #3b3d3f;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">Multimedia | Audio</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <br><br>
+    {% autopaginate audios 12 %}
+    {% for audio in audios %}
+    <div class="audio-lista-detalle">
+        <span class="audio-lista-fecha">{{audio.fecha|date:"d F Y"}}</span><br>
+        <a class="audio-lista-titulo" href="{{audio.get_absolute_url}}">{{audio.titulo}}</a><br>
+        <a class="audio-lista-play" href="{{audio.get_absolute_url}}">REPRODUCIR</a>
+    </div>
+    {% endfor %}
+    <div class="clean"></div>
+    <br>
+    {% paginate %}
+    <br>
+</div>
+{% endblock %}

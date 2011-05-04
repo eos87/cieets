@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Eventos{% endblock %}
+
+{% block extrahead %}
+<script src="/files/js/fullcalendar.min.js"></script>
+<link href="/files/css/fullcalendar.css" rel="stylesheet" type="text/css" media="screen"/>
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+    $(document).ready(function() {
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+        m = m-1;
+
+        $('#calendar').fullCalendar({
+            minTime: '8:00',
+            maxTime: '6:00pm',
+            defaultView: 'month',
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            contentHeight: 470,
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            buttonText: {
+                today: 'Hoy',
+                month: 'Mes',
+                day: 'Día',
+                week: 'Semana'
+            },
+            eventClick: function(calEvent, jsEvent, view) {
+                window.location = '/eventos/' + calEvent.slug;
+            },
+            editable: false,
+            events: "/eventos/"
+
+        });
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">Eventos</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <br><br>
+    <div id="calendar"></div>
+    <br><br>
+</div>
+{% endblock %}

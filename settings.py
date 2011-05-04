@@ -99,6 +99,7 @@ INSTALLED_APPS = (
     'cieets.multimedia',
     'cieets.contenido',
     'cieets.pagination',
+    'cieets.magicembed',
 )
 
 # A sample logging configuration. The only tangible logging

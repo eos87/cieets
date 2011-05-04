@@ -2,6 +2,7 @@
 from django.db import models
 from cieets.utils import get_file_path
 from cieets.thumbs import ImageWithThumbsField
+import datetime
 
 from south.modelsinspector import add_introspection_rules
 add_introspection_rules([], ["^cieets\.thumbs\.ImageWithThumbsField"])
@@ -43,18 +44,27 @@ class Video(models.Model):
     def __unicode__(self):
         return u'%s' % self.titulo
 
+    def get_absolute_url(self):
+        return '/videos/%s' % self.id
+
     class Meta:
         verbose_name_plural = u'Videos'
 
 class Musica(models.Model):
+    portada = models.BooleanField(verbose_name=u'En portada')
     titulo = models.CharField(max_length=100)
+    fecha = models.DateTimeField(default=datetime.datetime.now())
     artista = models.CharField(max_length=100)
     archivo = models.FileField(upload_to=get_file_path, help_text='Formato: .mp3')
+    descripcion = models.TextField(blank=True, default='')
 
     fileDir = 'multimedia/musica/'
 
     def __unicode__(self):
         return u'%s' % self.titulo
+
+    def get_absolute_url(self):
+        return '/audio/%s' % self.id
 
     class Meta:
         verbose_name = u'Música'

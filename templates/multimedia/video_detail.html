@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load magicembed %}
+
+{% block title %}Videos | {{video.titulo}}{% endblock %}
+
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+    .noticia-lista-fecha{
+        color: #3b3d3f;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">{{video.titulo}}</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <br><br>
+    <div class="video-detalle">{{video.url|magicembed:"400x350"|safe}}</div>
+    <div class="video-detalle-descripcion">{{video.descripcion|safe}}</div>
+    <div class="clean"></div>
+</div>
+{% endblock %}

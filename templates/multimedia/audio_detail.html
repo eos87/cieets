@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load magicembed %}
+
+{% block title %}Musica | {{audio.titulo}}{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript" src="/files/js/player/jwplayer.js"></script>
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+    span.especial{
+        color: #3b3d3f;        
+        font-size: 14px;
+    }
+    #radioplayer{
+        float: none;
+        margin-top: 5px !important;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">{{audio.titulo}}</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <br><br>
+    <div class="rinconplayer">
+        <span class="especial">Autor: {{audio.artista}}</span><br>
+        <div id="radioplayer"></div>
+    </div>
+    <br>
+    <div>
+        <span class="especial">{{audio.fecha|date:"d F Y"}}</span><br>
+        <div class="audio-descripcion">
+            {{audio.descripcion|safe}}
+        </div>
+    </div>
+    <div class="clean"></div>
+</div>
+<script type="text/javascript">
+    jwplayer('radioplayer').setup({
+        'flashplayer': '/files/js/player/player.swf',
+        //'skin': "/files/js/player/whotube.zip",
+        'id': 'playerID',
+        'width': '260',
+        'height': '24',
+        'file': '{{audio.archivo.url}}',
+        'controlbar': 'bottom'
+    });
+</script>
+{% endblock %}

@@ -1,7 +1,13 @@
-from django.shortcuts import render_to_response, render
+from cieets.contenido.models import Evento
+from cieets.contenido.models import Noticia
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render
+from django.shortcuts import render_to_response
 from django.template import RequestContext
-from models import FotoPortada, ProgramaRadial, Musica
-from cieets.contenido.models import Noticia, Evento
+from models import FotoPortada
+from models import Musica
+from models import ProgramaRadial
+from models import Video
 
 def index(request):
     fotos = FotoPortada.objects.all()
@@ -17,4 +23,20 @@ def index(request):
 def playlist(request):
     canciones = Musica.objects.all().order_by('id')[:15]
     return render(request, 'multimedia/playlist.html', {"canciones": canciones},
-        content_type="application/xhtml+xml")
+                  content_type="application/xhtml+xml")
+
+def videos(request, id=0):
+    if id != 0:        
+        video = get_object_or_404(Video, pk=id)
+        return render_to_response('multimedia/video_detail.html', RequestContext(request, locals()))        
+    else:
+        videos = Video.objects.all()
+    return render_to_response('multimedia/videos.html', RequestContext(request, locals()))
+
+def audio(request, id=0):
+    if id != 0:
+        audio = get_object_or_404(Musica, pk=id)
+        return render_to_response('multimedia/audio_detail.html', RequestContext(request, locals()))
+    else:
+        audios = Musica.objects.all()
+    return render_to_response('multimedia/audio.html', RequestContext(request, locals()))
