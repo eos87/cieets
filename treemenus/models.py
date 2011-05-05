@@ -8,7 +8,7 @@ from cieets.contenido.models import Pagina
 class MenuItem(models.Model):
     parent = models.ForeignKey('self', verbose_name=ugettext_lazy('parent'), null=True, blank=True)
     caption = models.CharField(ugettext_lazy('caption'), max_length=50)
-    tipo = models.IntegerField(choices=((1, 'URL'), (2, 'Pagina')))
+    tipo = models.IntegerField(choices=((1, 'URL'), (2, 'Pagina')), null=True, blank=True)
     url = models.CharField(ugettext_lazy('URL'), max_length=200, blank=True)
     pagina = models.OneToOneField(Pagina, blank=True, null=True)
     level = models.IntegerField(ugettext_lazy('level'), default=0, editable=False)
