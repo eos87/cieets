@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load pagination_tags %}
+
+{% block title %}Fototeca{% endblock %}
+
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+    .noticia-lista-fecha{
+        color: #3b3d3f;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">Multimedia | Fotos</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <br><br>
+    {% autopaginate galerias 12 %}
+    {% for galeria in galerias %}
+    <div class="video-lista-box">
+        <div class="video-lista-detail">
+            <a href="{{galeria.get_absolute_url}}" class="video-lista-detalle-link">
+                <img src="{{galeria.portada.url_200x150}}" alt="{{galeria.titulo}}">
+            </a>
+            <a href="{{galeria.get_absolute_url}}" class="video-lista-titulo">{{galeria.titulo}}</a>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="clean"></div>
+    <br>
+    {% paginate %}
+    <br>
+</div>
+{% endblock %}

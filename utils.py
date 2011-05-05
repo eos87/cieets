@@ -25,6 +25,6 @@ def get_file_path(instance, filename):
 def get_image_path(instance, filename):
     ext = filename.split('.')[-1]
     nombre = p.sub(repl, filename.replace('.'+filename.split('.')[-1], ''))
-    filename = "%s.%s" % (nombre, ext)
+    filename = "%s/%s.%s" % (instance.galeria.id, nombre, ext)
     return os.path.join(instance.imgDir, filename)
 

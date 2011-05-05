@@ -7,6 +7,8 @@ urlpatterns = patterns('cieets.multimedia.views',
     (r'^videos/(?P<id>\d+)/$', 'videos'),
     (r'^audio/$', 'audio'),
     (r'^audio/(?P<id>\d+)/$', 'audio'),
+    (r'^fototeca/$', 'fototeca'),
+    (r'^fototeca/(?P<id>\d+)/$', 'fototeca'),
 )
 
 

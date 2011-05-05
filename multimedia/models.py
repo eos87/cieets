@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django.db import models
-from cieets.utils import get_file_path
+from cieets.utils import get_file_path, get_image_path
 from cieets.thumbs import ImageWithThumbsField
 import datetime
 
@@ -69,3 +69,33 @@ class Musica(models.Model):
     class Meta:
         verbose_name = u'Música'
         verbose_name_plural = u'Música'
+
+class Galeria(models.Model):
+    titulo = models.CharField(max_length=150)
+    fecha = models.DateField()
+    portada = ImageWithThumbsField(upload_to=get_file_path, sizes=((200, 150), ), help_text='Formatos: .jpg .png .gif')
+
+    fileDir = 'multimedia/galeria/'
+
+    def __unicode__(self):
+        return u'%s' % self.titulo
+
+    def get_absolute_url(self):
+        return '/fototeca/%s' % self.id
+
+    class Meta:
+        verbose_name = u'Galería'
+        verbose_name_plural = u'Galerías'
+
+class Foto(models.Model):
+    imagen = ImageWithThumbsField(upload_to=get_image_path, sizes=((200, 150), ), help_text='Formatos: .jpg .png .gif')
+    descripcion = models.CharField(max_length=200, blank=True, default='')
+    galeria = models.ForeignKey(Galeria)
+
+    imgDir = 'multimedia/galeria/'
+
+    def __unicode__(self):
+        return u'%s' % self.id
+
+    class Meta:
+        verbose_name_plural = u'Fotos'

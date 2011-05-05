@@ -52,7 +52,6 @@ def rincon_detail(request, slug):
 
 def eventos(request):
     if request.is_ajax():
-        print '********************************'
         start = datetime.datetime.fromtimestamp(float(request.GET['start']))
         end = datetime.datetime.fromtimestamp(float(request.GET['end']))
         fecha1 = datetime.date(start.year, start.month, start.day)

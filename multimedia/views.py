@@ -4,10 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from models import FotoPortada
-from models import Musica
-from models import ProgramaRadial
-from models import Video
+from models import *
 
 def index(request):
     fotos = FotoPortada.objects.all()
@@ -40,3 +37,11 @@ def audio(request, id=0):
     else:
         audios = Musica.objects.all()
     return render_to_response('multimedia/audio.html', RequestContext(request, locals()))
+
+def fototeca(request, id=0):
+    if id != 0:
+        album = get_object_or_404(Galeria, pk=id)
+        return render_to_response('multimedia/fototeca_detail.html', RequestContext(request, locals()))
+    else:
+        galerias = Galeria.objects.all()
+    return render_to_response('multimedia/fototeca.html', RequestContext(request, locals()))

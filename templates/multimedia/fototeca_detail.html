@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load pagination_tags %}
+
+{% block title %}Fototeca | {{album.titulo}}{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript" src="/files/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="/files/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link type="text/css" rel="stylesheet" href="/files/js/fancybox/jquery.fancybox-1.3.4.css"/>
+<link type="text/css" rel="stylesheet" href="/files/js/fancybox/style.css" />
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+    .video-lista-box{
+        height: 170px;
+        background: none !important;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("a[rel=galeria_group]").fancybox({
+            'transitionIn'	: 'elastic',
+            'transitionOut'	: 'elastic',
+            'overlayColor': '#000',
+            'titlePosition': 'over',
+            'titleFormat': function(title, currentArray, currentIndex, currentOpts) {
+                return '<span id="fancybox-title-over">' + title + '</span>';
+            }
+        });
+    });
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">Fotos | {{album.titulo}}</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <br><br>
+    {% autopaginate album.foto_set.all 15 %}
+    {% for foto in album.foto_set.all %}
+    <div class="video-lista-box">
+        <div class="video-lista-detail">
+            <a rel=galeria_group href="{{foto.imagen.url}}" class="video-lista-detalle-link" title="{{foto.descripcion}}">
+                <img src="{{foto.imagen.url_200x150}}" alt="{{foto.descripcion}}" title="{{foto.descripcion}}">
+            </a>            
+        </div>
+    </div>
+    {% endfor %}
+    <div class="clean"></div>
+    <br>
+    {% paginate %}
+    <br>
+</div>
+{% endblock %}
