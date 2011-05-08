@@ -18,7 +18,7 @@ def index(request):
 
 
 def playlist(request):
-    canciones = Musica.objects.all().order_by('id')[:15]
+    canciones = Musica.objects.filter(portada=True).order_by('id')[:15]
     return render(request, 'multimedia/playlist.html', {"canciones": canciones},
                   content_type="application/xhtml+xml")
 

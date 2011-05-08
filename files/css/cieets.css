@@ -791,3 +791,62 @@ ul.nivel1left li ul li{
 #calendar h2{
     color: #586060;
 }
+.evento-detail{
+    font-family: "Trebuchet MS", Verdana, Helvetica, "Lucida Grande", Arial, sans-serif;
+}
+.evento-detail-fechas{
+    height: 65px;
+    background: url(/files/img/fechas-back.png) repeat-y;
+    color: #fff;
+}
+.fecha-left{
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.fecha-right{
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.big-day{
+    font-size: 50px;    
+    font-weight: bold;
+    float: left;
+}
+.resto-fecha{
+    float: left;
+    margin-top: 16px;
+    margin-left: 5px;
+}
+.fecha-inicia{
+    font-style: italic;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 13px;
+}
+.evento-mes{
+    font-weight: bold;
+    font-size: 12px;
+}
+.evento-mes span{
+    font-size: 11px;
+    color: #d6e195;
+}
+.evento-detail-info{
+    font-size: 12px;
+    margin-top: 15px;
+    color: #6e6e6e;
+}
+.evento-detail-info b{
+    line-height: 25px;
+}
+.evento-detail-contenido{
+    padding-left: 10px;
+    float: left;
+    width: 446px;
+}
+.evento-detail-lugar{
+    float: left;
+    padding-left: 10px;
+    width: 246px;
+}

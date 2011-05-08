@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Eventos | {{evento.titulo}}{% endblock %}
+
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');
+        var text = $('.pagina-title').html();
+        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
+        $('.caps').css('font-size', 22);
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">{{evento.titulo}}</div>
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <br><br>
+    <div class="evento-detail">
+        <div class="evento-detail-fechas">
+            <div class="fecha-left">
+                <div class="big-day">{{evento.fecha_inicio|date:"d"}}</div>
+                <div class="resto-fecha">
+                    <div class="fecha-inicia">Inicia</div>
+                    <div class="evento-mes">{{evento.fecha_inicio|date:"F"|upper}} | <span>{{evento.fecha_inicio|date:"f a"}}</span></div>
+                </div>
+                <div class="clean"></div>
+            </div>
+            <div class="fecha-right">
+                <div class="big-day">{{evento.fecha_final|date:"d"}}</div>
+                <div class="resto-fecha">
+                    <div class="fecha-inicia">Finaliza</div>
+                    <div class="evento-mes">{{evento.fecha_final|date:"F"|upper}} | <span>{{evento.fecha_final|date:"f a"}}</span></div>
+                </div>
+                <div class="clean"></div>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="evento-detail-info">
+            <div class="evento-detail-contenido">
+                <b>Descripci&oacute;n</b><br>
+                {{evento.contenido|safe}}
+            </div>
+            <div class="evento-detail-lugar">
+                <b>Lugar</b><br>
+                {{evento.lugar}}
+            </div>
+        </div>
+    </div>
+    <br><br>
+</div>
+{% endblock %}

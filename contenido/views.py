@@ -77,3 +77,7 @@ def eventos(request):
         return HttpResponse(simplejson.dumps(var), mimetype='application/json')
     
     return render_to_response('contenido/event_calendar.html', RequestContext(request, locals()))
+
+def evento_detail(request, slug):
+    evento = get_object_or_404(Evento, slug=slug)
+    return render_to_response('contenido/evento_detail.html', RequestContext(request, locals()))
