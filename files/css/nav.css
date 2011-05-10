@@ -40,6 +40,7 @@
     text-decoration: none;
     padding-left: 12px;
     padding-right: 12px;
+    line-height: 40px;
 }
 #nav a.lvl2{
     color: #d1dde0 !important;
