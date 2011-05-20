@@ -31,7 +31,17 @@
 
 {% block contenido %}
 <div class="leftmenubar">
-    <div class="title">{{pagina.menuitem.parent.parent}}</div>
+    <div class="title">
+    {% if pagina.menuitem.level == 3 %}
+    {{pagina.menuitem.parent.parent}}
+    {% else %}
+    {% if pagina.menuitem.level == 2 %}
+    {{pagina.menuitem.parent}}
+    {% else %}
+    {{pagina.menuitem}}
+    {% endif %}
+    {% endif %}
+    </div>
     {% show_menu "Principal" "pagina" %}
 </div>
 <div class="center">
