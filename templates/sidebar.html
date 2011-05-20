@@ -48,7 +48,7 @@
         <div class="sidebar-module-content">
             <p class="fecha">{{rincon.fecha|date:"d F Y"}}</p>
             <b>{{rincon.titulo}}</b><br>
-            {{rincon.contenido|safe}}<br>
+            {{rincon.contenido|truncatewords:"18"|safe}}<br>
             <a href="{{rincon.get_absolute_url}}" class="leer-mas">Leer m&aacute;s &raquo;</a>
             <div class="clean"></div>
         </div>
