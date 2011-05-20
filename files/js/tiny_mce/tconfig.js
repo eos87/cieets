@@ -4,7 +4,7 @@ tinyMCE.init({
 	theme : "advanced",
 	plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,inlinepopups,autosave",
 	// Theme options
-	theme_advanced_buttons1 : "bold,italic,underline,strikethrough,link,unlink,|,pastetext,bullist,numlist,outdent,indent,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,fontselect,code,",
+	theme_advanced_buttons1 : "bold,italic,underline,strikethrough,link,unlink,|,pastetext,bullist,numlist,outdent,indent,hr,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,fontselect,code,",
 	theme_advanced_buttons2 : "tablecontrols,",//cut,copy,paste,|,bullist,numlist,|,blockquote,|,undo,redo,|,link,unlink,image,media,cleanup,code,|,emotions,inserttime,preview,|,forecolor,",
 	theme_advanced_buttons3 : "",
 	theme_advanced_buttons4 : "",
