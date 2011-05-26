@@ -58,6 +58,7 @@
     </div>
     <div class="clean"></div>
 </div>
+{% if rincon.audio %}
 <script type="text/javascript">
     jwplayer('radioplayer').setup({
         'flashplayer': '/files/js/player/player.swf',
@@ -69,4 +70,5 @@
         'controlbar': 'bottom'
     });
 </script>
+{% endif %}
 {% endblock %}

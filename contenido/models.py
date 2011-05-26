@@ -163,7 +163,7 @@ class Publicacion(models.Model):
     portada = ImageWithThumbsField(upload_to=get_file_path, sizes=((67, 90), (176, 238)), help_text='Formatos: .jpg .png .gif')
     fecha = models.DateTimeField(default=datetime.datetime.now())
     descripcion = models.TextField()
-    archivo = models.FileField(upload_to=get_file_path)
+    archivo = models.FileField(upload_to=get_file_path, blank=True, null=True)
 
     fileDir = 'contenido/publicaciones/'
 

@@ -30,9 +30,9 @@
 {% endifequal %}
 
 
-{% ifequal menu_type "pagina" %}    
-    {% for menu_item in menu.root_item.children %}    
-    {% if menu_item == pagina.menuitem.parent.parent %}
+{% ifequal menu_type "pagina" %}
+	{% for menu_item in menu.root_item.children %}    
+    {% if menu_item == pagina.menuitem.parent.parent or menu_item == pagina.menuitem.parent or menu_item == pagina.menuitem %}    
     <ul class="nivel1left">        
         {% for child in menu_item.children %}        
         <li>

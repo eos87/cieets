@@ -74,7 +74,7 @@
         <div class="noticia-info">
             <a class="noticia-title" href="{{noticia.get_absolute_url}}">{{noticia.titulo}}</a><br>
             <b>Categoria: </b><a href="/noticias/?cat={{noticia.categoria.id}}">{{noticia.categoria}}</a>
-            <div class="noticia-desc">{{noticia.contenido|truncatewords:"50"}}</div>
+            <div class="noticia-desc">{{noticia.contenido|truncatewords:"50"|safe}}</div>
         </div>
         <div class="noticia-imagen">
             <img src="{{noticia.imagen.url_231x174}}" alt="{{noticia.titulo}}">

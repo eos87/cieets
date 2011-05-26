@@ -7,11 +7,11 @@ def variables(request):
     modulo = None
     rincon = None
     try:
-        revista = Publicacion.objects.filter(categoria=2).latest('fecha')
+        revista = Publicacion.objects.filter(categoria=1).latest('fecha')
     except:
         pass
     try:
-        boletin = Publicacion.objects.filter(categoria=1).latest('fecha')
+        boletin = Publicacion.objects.filter(categoria=2).latest('fecha')
     except:
         pass
     try:
