@@ -1,10 +1,12 @@
 from cieets.contenido.models import Evento
 from cieets.contenido.models import Noticia
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from models import *
+from forms import *
 
 def index(request):
     fotos = FotoPortada.objects.all()
@@ -45,3 +47,25 @@ def fototeca(request, id=0):
     else:
         galerias = Galeria.objects.all()
     return render_to_response('multimedia/fototeca.html', RequestContext(request, locals()))
+
+@login_required
+def imagen_tiny(request):    
+    if request.method == 'POST':
+        form = ImagesForm(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            if 'file' in request.FILES:
+                new = Images()
+                new.user = request.user
+                new.file = request.FILES['file']
+                new.save()
+                imagen = new
+    else:
+        form = ImagesForm()
+
+    if request.is_ajax():
+        id = request.POST['id']        
+        obj = Images.objects.get(pk=int(id))
+        if request.user == obj.user:
+            obj.delete()
+                
+    return render_to_response('multimedia/imagen_tiny.html', RequestContext(request, locals()))

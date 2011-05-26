@@ -9,7 +9,8 @@ urlpatterns = patterns('',
     (r'^', include('cieets.contenido.urls')),
     (r'^', include('cieets.multimedia.urls')),
 
-    # Uncomment the next line to enable the admin:    
+    # Uncomment the next line to enable the admin:
+    (r'^admin/filebrowser/', 'cieets.multimedia.views.imagen_tiny'),    
     url(r'^admin/', include(admin.site.urls)),
 )
 

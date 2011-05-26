@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django.db import models
+from django.contrib.auth.models import User
 from cieets.utils import get_file_path, get_image_path
 from cieets.thumbs import ImageWithThumbsField
 import datetime
@@ -99,3 +100,15 @@ class Foto(models.Model):
 
     class Meta:
         verbose_name_plural = u'Fotos'
+        
+class Images(models.Model):
+    user = models.ForeignKey(User)
+    file = models.ImageField(upload_to=get_file_path)
+    fecha = models.DateTimeField(default=datetime.datetime.now())
+    
+    fileDir = 'multimedia/uploads/'
+
+    class Meta:
+        verbose_name = "Imagen subida"
+        verbose_name_plural = "Imagenes subidas"
+        
