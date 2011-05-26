@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
+from cieets.contenido.feeds import *
 from settings import DEBUG, PROJECT_DIR
 
 # Uncomment the next two lines to enable the admin:
@@ -10,6 +11,7 @@ urlpatterns = patterns('',
     (r'^', include('cieets.multimedia.urls')),
 
     # Uncomment the next line to enable the admin:
+    (r'^rss/$', NoticiasFeed()),
     (r'^admin/filebrowser/', 'cieets.multimedia.views.imagen_tiny'),    
     url(r'^admin/', include(admin.site.urls)),
 )
