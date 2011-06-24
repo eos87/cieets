@@ -30,14 +30,18 @@
             <img class="publicacion-imagen" src="{{publicacion.portada.url_176x238}}" alt="{{publicacion.titulo}}">
             <span class="publicacion-detalle-categoria">{{categoria}}</span>
             <div class="publicacion-detalle-texto">{{publicacion.descripcion|safe}}<br><br>
+                {% if publicacion.archivo %}
                 <a class="publicacion-detalle-descargar" href="{{publicacion.archivo.url}}">Descargar</a>
+                {% endif %}
             </div>
         </div>
     </div>
     <div class="clean"></div>
     {% if otras_publicaciones %}
     <div class="otras-publicaciones">
+    	{% if otras_publicaciones %}
         <span>Otras publicaciones</span>
+        {% endif%}
         {% for publica in otras_publicaciones %}
         <div class="otra-publicacion {% if forloop.first %}border-arriba{% endif %}">
             <img src="{{publica.portada.url_67x90}}" width="50" height="67" alt="{{publica.titulo}}">
