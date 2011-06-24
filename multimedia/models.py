@@ -32,6 +32,9 @@ class ProgramaRadial(models.Model):
 
     def __unicode__(self):
         return u'%s' % self.titulo
+    
+    def get_absolute_url(self):
+        return '/programa-radial/%s' % self.id
 
     class Meta:
         verbose_name = u'Programa radial'

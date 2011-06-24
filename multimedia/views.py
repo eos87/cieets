@@ -18,7 +18,6 @@ def index(request):
         pass
     return render_to_response('index.html', RequestContext(request, locals()))
 
-
 def playlist(request):
     canciones = Musica.objects.filter(portada=True).order_by('id')[:15]
     return render(request, 'multimedia/playlist.html', {"canciones": canciones},
@@ -47,6 +46,15 @@ def fototeca(request, id=0):
     else:
         galerias = Galeria.objects.all()
     return render_to_response('multimedia/fototeca.html', RequestContext(request, locals()))
+
+def programaradial(request, id=0):
+    if id != 0:
+        audio = get_object_or_404(ProgramaRadial, pk=id)
+        return render_to_response('multimedia/programaradial_detail.html', RequestContext(request, locals()))
+    else:
+        audios = ProgramaRadial.objects.all()
+    return render_to_response('multimedia/programaradial.html', RequestContext(request, locals()))
+
 
 @login_required
 def imagen_tiny(request):    
