@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     (r'^', include('cieets.multimedia.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^rss/$', NoticiasFeed()),
+    (r'^rss/$', NoticiasFeed()),    
     (r'^admin/filebrowser/', 'cieets.multimedia.views.imagen_tiny'),    
     url(r'^admin/', include(admin.site.urls)),
 )

@@ -851,3 +851,12 @@ ul.nivel1left li ul li{
     padding-left: 10px;
     width: 246px;
 }
+#cse-search-box input[name="q"] {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    border: 1px #b0b0b0 solid;
+    border-radius: 5px;
+    padding: 5px 12px;
+    width: 170px;
+    margin: 15px 0px 10px 10px;
+    color: #808080;    
+}

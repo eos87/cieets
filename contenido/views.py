@@ -2,6 +2,7 @@
 from cieets.treemenus.models import *
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response
+from django.views.generic.simple import direct_to_template
 from django.template import RequestContext
 from django.http import HttpResponse
 from django.utils import simplejson
@@ -81,3 +82,7 @@ def eventos(request):
 def evento_detail(request, slug):
     evento = get_object_or_404(Evento, slug=slug)
     return render_to_response('contenido/evento_detail.html', RequestContext(request, locals()))
+
+def busqueda(request):
+    q = request.GET.get('q', '')
+    return direct_to_template(request, 'contenido/busqueda.html', {'q': q})

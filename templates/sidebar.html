@@ -1,6 +1,14 @@
 {% load tree_menu_tags %}
 <div id="sidebar">
-    <div class="social">
+	<div class="search">
+		<form action="/busqueda/" id="cse-search-box" method='GET'>
+			<div>				
+				<input type="text" name="q" size="31" />
+			</div>
+		</form>
+		<script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&lang=es"></script>
+	</div>
+	<div class="social">
         <div><a href="/rss/"><img src="/files/img/rss.png" alt="Rss"></a><br>RSS</div>
         <div><a href="http://twitter.com"><img src="/files/img/twitter.png" alt="Twitter"></a><br>Twitter</div>
         <div><a href="http://facebook.com"><img src="/files/img/facebook.png" alt="Facebook"></a><br>Facebook</div>
@@ -61,3 +69,22 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+	if('{{q}}' != ''){
+		$('input[name="q"]').val('{{q}}');
+	}
+    if($('#cse-search-box input[name="q"]').val()==''){
+        $('#cse-search-box input[name="q"]').val('Buscar');
+    }
+    $('#cse-search-box input[name="q"]').click(function(){
+        if($(this).val()=='Buscar'){$(this).val('')}
+    });
+    $('#cse-search-box input[name="q"]').focus(function(){
+        if($(this).val()=='Buscar'){$(this).val('')}
+    });
+    $('#cse-search-box input[name="q"]').blur(function(){
+        if($(this).val()==''){$(this).val('Buscar')}
+    });
+});
+</script>
