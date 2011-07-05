@@ -2,6 +2,11 @@
 {% block title %}Busqueda{% endblock %}
 
 {% block extrahead %}
+<script type="text/javascript">
+$(window).load(function(){    
+    $('#cuerpo').height('auto');    
+});
+</script>
 <style type="text/css">
     .center{
         width: 712px;
@@ -16,6 +21,7 @@
 <h1>Resultados de Búsqueda para: <span>{{q}}</span></h1>
 
 <div id="cse" style="width: 100%;">Loading</div>
+<div class="clean"></div>
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript"> 
   function parseQueryFromUrl () {
