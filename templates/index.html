@@ -15,17 +15,13 @@
     jQuery(document).ready(function($) {
         Cufon.replace('.leftbar-title, .center-title, .evento-title, .zonas-title');
         var text = $('.leftbar-title').html();
-        $('.leftbar-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
-        $('.caps').css('font-size', 22);
+        $('.leftbar-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));        
         var text = $('.center-title').html();
-        $('.center-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
-        $('.caps').css('font-size', 22);
+        $('.center-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));        
         var text = $('.evento-title').html();
-        $('.evento-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
-        $('.caps').css('font-size', 22);
+        $('.evento-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));        
         var text = $('.zonas-title').html();
-        $('.zonas-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
-        $('.caps').css('font-size', 22);
+        $('.zonas-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));        
     });
 </script>
 {% endblock %}

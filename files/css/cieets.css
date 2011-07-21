@@ -140,6 +140,7 @@ a{
 .caps{
     position: relative;
     top: 1px;
+    font-size: 22px;
 }
 .leftbar{
     width: 235px;

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load tree_menu_tags %}
-
+{% load tools %}
 {% block title %}{{pagina.titulo}}{% endblock %}
 
 {% block extrahead %}
@@ -11,10 +11,7 @@
 </style>
 <script type="text/javascript">
     $(document).ready(function($) {
-        Cufon.replace('.pagina-title');
-        var text = $('.pagina-title').html();
-        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
-        $('.caps').css('font-size', 22);
+        Cufon.replace('.pagina-title');        
     });
     $(window).load(function(){
         var sidebar = $('.leftmenubar').height();
@@ -45,7 +42,7 @@
     {% show_menu "Principal" "pagina" %}
 </div>
 <div class="center">
-    <div class="pagina-title">{{pagina.titulo}}</div>
+    <div class="pagina-title">{{pagina.titulo|cufon|safe}}</div>
     <img src="/files/img/pagina-separador.png" alt="Cieets">
     <div class="pagina-contenido">
         {{pagina.contenido|safe}}
