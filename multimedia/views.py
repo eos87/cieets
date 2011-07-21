@@ -52,7 +52,7 @@ def programaradial(request, id=0):
         audio = get_object_or_404(ProgramaRadial, pk=id)
         return render_to_response('multimedia/programaradial_detail.html', RequestContext(request, locals()))
     else:
-        audios = ProgramaRadial.objects.all()
+        audios = ProgramaRadial.objects.all().order_by('-fecha')
     return render_to_response('multimedia/programaradial.html', RequestContext(request, locals()))
 
 
