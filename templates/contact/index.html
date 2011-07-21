@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load tools %}
+{% block title %} Contact{% endblock %}
+{% block extrahead %}
+<style type="text/css">
+    textarea{
+        width: 250px;
+        height: 130px;
+    }
+    .center{
+        width: 712px;
+    }    
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+    	Cufon.replace('.pagina-title');    	
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+    <div class="pagina-title">{% with titulo='Contáctenos' %}{{titulo|cufon|safe}}{% endwith %}</div>
+    {% if status %}
+    <div class="status">
+        Tu mensaje ha sido enviado!.
+    </div>
+    {% endif %}
+    <div class="form">
+        <form action="." method="POST">{% csrf_token %}
+            <table width="100%">                
+                <tr>
+                    <td><label>
+                            {% if lang == 'en' %}
+                            {{form.name.label}}
+                            {% else %}
+                            Nombre
+                            {% endif %}
+                        </label><br>
+                        {{form.name}}<br>
+                        {{form.name.errors}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>
+                            {% if lang == 'en' %}
+                            {{form.email.label}}
+                            {% else %}
+                            Correo
+                            {% endif %}
+                        </label><br>
+                        {{form.email}}<br>
+                        {{form.email.errors}}
+                    </td>
+                </tr>                 
+                <tr>
+                    <td><label>
+                            {% if lang == 'en' %}
+                            {{form.message.label}}
+                            {% else %}
+                            Mensaje
+                            {% endif %}
+                        </label><br>
+                        {{form.message}}<br>
+                        {{form.message.errors}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="{% if lang == 'en' %}Submit{% else %}Enviar{% endif %}">
+                    </td>
+                </tr>
+            </table>
+        </form>        
+        <br>
+    </div>    
+</div>
+{% endblock %}

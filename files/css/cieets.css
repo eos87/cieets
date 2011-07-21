@@ -898,3 +898,29 @@ td {
 	color: #696969;
 	background: #FFFFFF;
 }
+
+/*------ fin tables -------- */
+.form input[type="text"], .form textarea{
+	border: 1px solid #B0B0B0;
+	color: #808080;
+	padding: 3px;
+	margin-top: 3px;
+}
+.form input[type="text"]{
+	width: 200px;	
+}
+.form textarea{
+	width: 300px;
+}
+.form label{
+	font-size: 12px;	
+}
+.status{
+    background: url("/files/img/icon_success.gif") no-repeat scroll 5px 0.3em #FFFFCC;
+    border-bottom: 1px solid #DDDDDD;
+    margin: 3px 0 3px;
+    padding: 5px 5px 4px 25px;
+    color: #666666;
+    font-size: 13px;
+}
+	

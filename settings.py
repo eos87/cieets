@@ -134,3 +134,7 @@ TEMPLATE_CONTEXT_PROCESSORS=(
     "django.contrib.messages.context_processors.messages",
     "cieets.context.variables",
 )
+
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'no-reply@cieets.org.ni'
+EMAIL_HOST_PASSWORD = 'noreplyCieets'
