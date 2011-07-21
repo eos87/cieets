@@ -30,6 +30,7 @@
     <br><br>
     <div class="noticia-bar">
         <img src="{{noticia.imagen.url_225x168}}" alt="{{noticia.titulo}}" class="noticia-detail-imagen"><br>
+        {% if noticia.adjunto %}
         <div class="adjuntos">
             Documentos Adjuntos<br><br>
             {% for adjunto in noticia.adjunto.all %}
@@ -37,6 +38,7 @@
             <a href="{{adjunto.archivo.url}}" class="adjunto-descargar">Descargar</a><br><br>
             {% endfor %}
         </div>
+        {% endfor %}
     </div>
     <div class="noticia-descripcion">
         <div class="noticia-lista-fecha">{{noticia.fecha|date:"d F Y"}}</div>
