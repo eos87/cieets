@@ -9,7 +9,10 @@
         <ul class="nivel2">
             {% for child in menu_item.children %}            
             {% if child.has_children %}
-            <li><a class="lvl2" href="{% if child.tipo == 1 %}{{ child.url }}{% else %}{{child.pagina.get_absolute_url}}{% endif %}">{{ child.caption }}</a>
+            <li>
+            	<div class='{{forloop.counter}}_{{forloop.parentloop.counter}}'>
+            	<a class="lvl2" href="{% if child.tipo == 1 %}{{ child.url }}{% else %}{{child.pagina.get_absolute_url}}{% endif %}">{{ child.caption }}</a>
+            	</div>
                 <div class="nivel3">                    
                     {% for subchild in child.children %}
                     <a href="{% if subchild.tipo == 1 %}{{ subchild.url }}{% else %}{{subchild.pagina.get_absolute_url}}{% endif %}">{{ subchild.caption }}</a>
@@ -19,7 +22,7 @@
             {% else %}
             <li><a class="lvl2" href="{% if child.tipo == 1 %}{{ child.url }}{% else %}{{child.pagina.get_absolute_url}}{% endif %}">{{ child.caption }}</a></li>
             {% endif %}
-            {% endfor %}
+            {% endfor %}            
         </ul>
     </li>
     {% else %}
