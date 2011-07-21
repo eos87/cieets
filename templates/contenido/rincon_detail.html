@@ -44,13 +44,15 @@
             <span>Autor: {{rincon.autor}}</span>
             <div id="radioplayer"></div>
         </div>
+       {% if  rincon.adjunto.all %}
         <div class="adjuntos"><br>
             Documentos Adjuntos<br><br>
             {% for adjunto in rincon.adjunto.all %}
             <span class="adjunto-title">{{adjunto.nombre}}</span><br>
             <a href="{{adjunto.archivo.url}}" class="adjunto-descargar">Descargar</a><br><br>
             {% endfor %}
-        </div>        
+        </div>
+        {% endif %}        
     </div>
     <div class="noticia-descripcion">
         <div class="noticia-lista-fecha">{{rincon.fecha|date:"d F Y"}}</div>
