@@ -30,7 +30,7 @@
     <br><br>
     <div class="noticia-bar">
         <img src="{{noticia.imagen.url_225x168}}" alt="{{noticia.titulo}}" class="noticia-detail-imagen"><br>
-        {% if noticia.adjunto %}
+        {% if noticia.adjunto.all %}
         <div class="adjuntos">
             Documentos Adjuntos<br><br>
             {% for adjunto in noticia.adjunto.all %}
