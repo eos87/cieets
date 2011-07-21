@@ -6,7 +6,7 @@ function mainmenu(){
 $(document).ready(function(){
 	//asignar tamaños cuando carga la pagina
 	$('.nivel2').each(function(){
-    	var ancho = 0;
+    	var ancho = 2;
     	$(this).children().each(function(){
     		ancho = ancho + $(this).width();
     	})
