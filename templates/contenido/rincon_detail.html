@@ -25,10 +25,7 @@
 </style>
 <script type="text/javascript">
     $(document).ready(function($) {
-        Cufon.replace('.pagina-title');
-        var text = $('.pagina-title').html();
-        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
-        $('.caps').css('font-size', 22);
+        Cufon.replace('.pagina-title');       
     });
 </script>
 {% endblock %}
