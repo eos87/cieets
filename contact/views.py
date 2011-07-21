@@ -16,7 +16,7 @@ def index(request):
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
             contenido = render_to_string('contact/message.txt', RequestContext(request, locals()))
-            send_mail('Contaco desde Cieets.org.ni', contenido, 'no-reply@cieets.org.ni', ['helmygb@gmail.com',])
+            send_mail('Contaco desde Cieets.org.ni', contenido, 'no-reply@cieets.org.ni', ['cieets@cieets.org.ni', 'biblioteca@cieets.org.ni'])
             return HttpResponseRedirect('/contact/?status=ok')
     else:
         form = ContactForm()
