@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load tools %}
 {% block title %}Noticias | {{noticia.titulo}}{% endblock %}
 
 {% block extrahead %}
@@ -18,17 +18,14 @@
 </style>
 <script type="text/javascript">
     $(document).ready(function($) {
-        Cufon.replace('.pagina-title');
-        var text = $('.pagina-title').html();
-        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
-        $('.caps').css('font-size', 22);
+        Cufon.replace('.pagina-title');        
     });
 </script>
 {% endblock %}
 
 {% block contenido %}
 <div class="center">
-    <div class="pagina-title">{{noticia.titulo}}</div>
+    <div class="pagina-title">{{noticia.titulo|cufon|safe}}</div>
     <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
     <br><br>
     <div class="noticia-bar">

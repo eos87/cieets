@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load pagination_tags %}
+{% load tools %}
 
 {% block title %}Publicaciones | {{publicacion.titulo}}{% endblock %}
 
@@ -14,16 +15,13 @@
 </style>
 <script type="text/javascript">
     $(document).ready(function($) {
-        Cufon.replace('.pagina-title');
-        var text = $('.pagina-title').html();
-        $('.pagina-title').html(text.replace(/\b([A-Za-z0-9])/g,'<span class="caps">$1</span>'));
-        $('.caps').css('font-size', 22);
+        Cufon.replace('.pagina-title');        
     });
 </script>
 {% endblock %}
 {% block contenido %}
 <div class="center">
-    <div class="pagina-title">{{publicacion.titulo}}</div>
+    <div class="pagina-title">{{publicacion.titulo|cufon|safe}}</div>
     <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
     <div class="publicacion-detalle">        
         <div class="publicacion-contenido">

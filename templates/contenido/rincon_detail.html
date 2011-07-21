@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load tools %}
 {% block title %}{{rincon.titulo}}{% endblock %}
 
 {% block extrahead %}
@@ -35,7 +35,7 @@
 
 {% block contenido %}
 <div class="center">
-    <div class="pagina-title">{{rincon.titulo}}</div>
+    <div class="pagina-title">{{rincon.titulo|cufon|safe}}</div>
     <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
     <br><br>
     <div class="noticia-bar">
