@@ -16,8 +16,13 @@
         color: #4893a4;
     }
     .video-lista-box{
-        height: 170px;
+        height: 180px;
         background: none !important;
+    }
+    .foto-descripcion{
+    	font-size: 11px;
+    	color: #6E6E6E;
+    	text-align: center;
     }
 </style>
 <script type="text/javascript">
@@ -51,9 +56,10 @@
     <div class="video-lista-box">
         <div class="video-lista-detail">
             <a rel=galeria_group href="{{foto.imagen.url}}" class="video-lista-detalle-link" title="{{foto.descripcion}}">
-                <img src="{{foto.imagen.url_200x150}}" alt="{{foto.descripcion}}" title="{{foto.descripcion}}">
-            </a>            
+                <img src="{{foto.imagen.url_200x150}}" alt="{{foto.descripcion}}" title="{{foto.descripcion}}">                
+            </a>                                    
         </div>
+        <div class="foto-descripcion">{{foto.descripcion}}</div>        
     </div>
     {% endfor %}
     <div class="clean"></div>
