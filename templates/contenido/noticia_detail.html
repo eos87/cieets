@@ -30,6 +30,10 @@
     <br><br>
     <div class="noticia-bar">
         <img src="{{noticia.imagen.url_225x168}}" alt="{{noticia.titulo}}" class="noticia-detail-imagen"><br>
+        <div class="adjuntos">
+        	Autor:<br>
+        	<span class="adjunto-title">{{noticia.autor}}</span><br><br>        	
+        </div>
         {% if noticia.adjunto.all %}
         <div class="adjuntos">
             Documentos Adjuntos<br><br>
