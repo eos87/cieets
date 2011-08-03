@@ -47,7 +47,7 @@ def publicacion_detail(request, id):
     return render_to_response('contenido/publicacion_detail.html', RequestContext(request, locals()))
 
 def rincon_list(request):    
-    rincones = RinconLiturgico.objects.all()
+    rincones = RinconLiturgico.objects.all().order_by('-fecha')
     return render_to_response('contenido/rincon_list.html', RequestContext(request, locals()))
 
 def rincon_detail(request, slug):
