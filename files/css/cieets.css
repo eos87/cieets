@@ -139,7 +139,8 @@ a{
 }
 #cuerpo{    
     width: 743px;    
-    float: left;    
+    float: left;
+    background: #fff;    
 }
 .caps{
     position: relative;
