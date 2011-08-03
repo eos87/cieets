@@ -35,7 +35,7 @@
         <div class="noticia-lista-detalle">            
             <div class="noticia-lista-datos">
                 <div class="noticia-lista-title"><a href="{{rincon.get_absolute_url}}">{{rincon.titulo}}</a></div>
-                <div class="rincon-contenido-list">{{rincon.contenido|truncatewords:30|safe}}</div>
+                <div class="rincon-contenido-list">{{rincon.contenido|removetags:"b span p img &nbsp; strong h4 h1 h2 h3 h5 h6"|safe|truncatewords:30}}</div>
                 <div class="noticia-lista-categoria">Autor: <a href="{{rincon.get_absolute_url}}">{{rincon.autor}}</a> | <span class="noticia-lista-fecha">{{rincon.fecha|date:"d F Y"}}</span></div>
                 <a href="{{rincon.get_absolute_url}}" class="noticia-lista-leer-mas">Leer Mas</a>                
             </div>            
