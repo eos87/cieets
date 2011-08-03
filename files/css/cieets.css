@@ -614,7 +614,7 @@ ul.nivel1left li ul li{
 .noticia-descripcion{
     font-family: "Trebuchet MS", sans-serif;
     float: left;
-    font-size: 13px;
+    font-size: 12px;
     color: #6e6e6e;
     width: 450px;
 }
@@ -922,5 +922,12 @@ td {
     padding: 5px 5px 4px 25px;
     color: #666666;
     font-size: 13px;
+}
+.rincon-contenido-list{
+	font-size: 12px;
+	color: #6E6E6E;
+}
+p{
+	text-align: justify !important;
 }
 	

@@ -12,7 +12,7 @@ def pagina_detail(request, slug):
     pagina  = get_object_or_404(Pagina, slug=slug)
     return render_to_response('contenido/pagina_detail.html', RequestContext(request, locals()))
 
-def noticias(request):
+def noticias(request):    
     categorias = Categoria.objects.all()
     cat = request.GET.get('cat', '')
     if cat:
@@ -46,9 +46,12 @@ def publicacion_detail(request, id):
     otras_publicaciones = Publicacion.objects.all().exclude(id=publicacion.id).order_by('?')[:3]
     return render_to_response('contenido/publicacion_detail.html', RequestContext(request, locals()))
 
+def rincon_list(request):    
+    rincones = RinconLiturgico.objects.all()
+    return render_to_response('contenido/rincon_list.html', RequestContext(request, locals()))
+
 def rincon_detail(request, slug):
     rincon = get_object_or_404(RinconLiturgico, slug=slug)
-
     return render_to_response('contenido/rincon_detail.html', RequestContext(request, locals()))
 
 def eventos(request):

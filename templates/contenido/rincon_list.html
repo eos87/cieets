@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load tools %}
+{% load pagination_tags %}
+
+{% block title %}Rincón Litúrgico{% endblock %}
+
+{% block extrahead %}
+<style type="text/css">
+    .center{
+        width: 712px;
+    }
+    .pagina-title{
+        color: #4893a4;
+    }
+    .noticia-lista-leer-mas{
+    	margin-top: 15px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function($) {
+        Cufon.replace('.pagina-title');        
+    });
+</script>
+{% endblock %}
+
+{% block contenido %}
+<div class="center">
+	{% with titulo='Rincón Litúrgico' %}
+    <div class="pagina-title">{{titulo|cufon|safe}}</div>
+    {% endwith %}
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">    
+    {% autopaginate rincones 8 %}
+    <div class="noticia-lista">
+        {% for rincon in rincones %}
+        <div class="noticia-lista-detalle">            
+            <div class="noticia-lista-datos">
+                <div class="noticia-lista-title"><a href="{{rincon.get_absolute_url}}">{{rincon.titulo}}</a></div>
+                <div class="rincon-contenido-list">{{rincon.contenido|truncatewords:30|safe}}</div>
+                <div class="noticia-lista-categoria">Autor: <a href="{{rincon.get_absolute_url}}">{{rincon.autor}}</a> | <span class="noticia-lista-fecha">{{rincon.fecha|date:"d F Y"}}</span></div>
+                <a href="{{rincon.get_absolute_url}}" class="noticia-lista-leer-mas">Leer Mas</a>                
+            </div>            
+            <div class="clean"></div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    {% paginate %}
+    <br>
+</div>
+{% endblock %}
