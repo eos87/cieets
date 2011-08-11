@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load tools %}
-{% block title %}{{rincon.titulo}}{% endblock %}
+{% block title %}{{rincon1.titulo}}{% endblock %}
 
 {% block extrahead %}
 <script type="text/javascript" src="/files/js/player/jwplayer.js"></script>
@@ -32,19 +32,19 @@
 
 {% block contenido %}
 <div class="center">
-    <div class="pagina-title">{{rincon.titulo|cufon|safe}}</div>
+    <div class="pagina-title">{{rincon1.titulo|cufon|safe}}</div>
     <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
     <br><br>
     <div class="noticia-bar">
         <br>        
         <div class="rinconplayer">
-            <span>Autor: {{rincon.autor}}</span>
+            <span>Autor: {{rincon1.autor}}</span>
             <div id="radioplayer"></div>
         </div>        
-       {% if  rincon.adjunto.all %}
+       {% if rincon1.adjunto.all %}
         <div class="adjuntos"><br>
             Documentos Adjuntos<br><br>
-            {% for adjunto in rincon.adjunto.all %}
+            {% for adjunto in rincon1.adjunto.all %}
             <span class="adjunto-title">{{adjunto.nombre}}</span><br>
             <a href="{{adjunto.archivo.url}}" class="adjunto-descargar">Descargar</a><br><br>
             {% endfor %}
@@ -52,12 +52,12 @@
         {% endif %}        
     </div>
     <div class="noticia-descripcion">
-        <div class="noticia-lista-fecha">{{rincon.fecha|date:"d F Y"}}</div>
-        {{rincon.contenido|safe}}
+        <div class="noticia-lista-fecha">{{rincon1.fecha|date:"d F Y"}}</div>
+        {{rincon1.contenido|safe}}
     </div>
     <div class="clean"></div>
 </div>
-{% if rincon.audio %}
+{% if rincon1.audio %}
 <script type="text/javascript">
     jwplayer('radioplayer').setup({
         'flashplayer': '/files/js/player/player.swf',
@@ -65,7 +65,7 @@
         'id': 'playerID',
         'width': '235',
         'height': '24',
-        'file': '{{rincon.audio.url}}',
+        'file': '{{rincon1.audio.url}}',
         'controlbar': 'bottom'
     });
 </script>

@@ -51,7 +51,7 @@ def rincon_list(request):
     return render_to_response('contenido/rincon_list.html', RequestContext(request, locals()))
 
 def rincon_detail(request, slug):
-    rincon = get_object_or_404(RinconLiturgico, slug=slug)
+    rincon1 = get_object_or_404(RinconLiturgico, slug=slug)
     return render_to_response('contenido/rincon_detail.html', RequestContext(request, locals()))
 
 def eventos(request):
