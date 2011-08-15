@@ -31,8 +31,11 @@
     <div id="carrusel-container">
         <ul>
             {% for foto in fotos %}
-            <li class="carrusel-item"><a rel=example_group href="{{foto.archivo.url}}"><img src="{{foto.archivo.url_122x91}}" width="122" height="91" alt="{{foto.nombre}}"></a></li>            
-            {% endfor %}            
+            <li class="carrusel-item"><a rel=example_group href="{{foto.archivo.url}}"><img src="{{foto.archivo.url_122x91}}" width="122" height="91" alt="{{foto.nombre}}"></a></li>
+            {% if forloop.last %}
+            <li class="carrusel-item"><a href="{{foto.archivo.url}}"><img src="{{foto.archivo.url_122x91}}" width="122" height="91" alt="{{foto.nombre}}"></a></li>
+            {% endif %}
+            {% endfor %}
         </ul>
     </div>    
     <div class="clean"></div>

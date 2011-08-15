@@ -9,7 +9,7 @@ from models import *
 from forms import *
 
 def index(request):
-    fotos = FotoPortada.objects.all()
+    fotos = FotoPortada.objects.all().order_by('id')
     noticias = Noticia.objects.all().order_by('-fecha')[:5]
     eventos = Evento.objects.all().order_by('-fecha_inicio')[:3]
     try:
