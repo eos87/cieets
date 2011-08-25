@@ -41,7 +41,7 @@ class PublicacionAdmin(BaseAdmin):
 
 class RinconAdmin(BaseAdmin):
     list_display = ['titulo', 'fecha', 'autor']
-    list_filter = ['autor', 'fecha']
+    list_filter = ['autor', 'fecha', 'categoria']
     list_per_page = 25
     save_on_top = True
     actions_on_top = True

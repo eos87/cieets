@@ -143,7 +143,7 @@ class RinconLiturgico(models.Model):
     titulo = models.CharField(max_length=200)
     fecha = models.DateTimeField(default=datetime.datetime.now())    
     autor = models.CharField(max_length=200)
-    #categoria = models.ForeignKey(CategoriaRincon)
+    categoria = models.ForeignKey(CategoriaRincon)
     contenido = models.TextField()
     audio = models.FileField(upload_to=get_file_path, help_text=u'Formato: .mp3', blank=True, null=True)
     slug = models.SlugField(max_length=250, editable=False)
