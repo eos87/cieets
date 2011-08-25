@@ -129,10 +129,21 @@ class Evento(models.Model):
     class Meta:
         verbose_name_plural = u'Eventos'
 
-class RinconLiturgico(models.Model):
+class CategoriaRincon(models.Model):
+    nombre = models.CharField(max_length=150)
+
+    def __unicode__(self):
+        return u'%s' % self.nombre
+
+    class Meta:
+        verbose_name = u'Categoria Rincón Litúrgico'
+        verbose_name_plural = u'Categorias Rincón Litúrgico'
+
+class RinconLiturgico(models.Model):    
     titulo = models.CharField(max_length=200)
-    fecha = models.DateTimeField(default=datetime.datetime.now())
+    fecha = models.DateTimeField(default=datetime.datetime.now())    
     autor = models.CharField(max_length=200)
+    #categoria = models.ForeignKey(CategoriaRincon)
     contenido = models.TextField()
     audio = models.FileField(upload_to=get_file_path, help_text=u'Formato: .mp3', blank=True, null=True)
     slug = models.SlugField(max_length=250, editable=False)

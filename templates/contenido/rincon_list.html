@@ -28,7 +28,13 @@
 	{% with titulo='Rincón Litúrgico' %}
     <div class="pagina-title">{{titulo|cufon|safe}}</div>
     {% endwith %}
-    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">    
+    <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
+    <div class="noticias-categorias">
+        {% for categoria in categorias %}
+        <a href="/noticias/?cat={{categoria.pk}}" class="categoria {% if selecta == categoria.id %}categoria-selecta{% endif %}">{{categoria.nombre}}</a>
+        {% endfor %}
+        <div class="clean"></div>
+    </div>    
     {% autopaginate rincones 8 %}
     <div class="noticia-lista">
         {% for rincon in rincones %}

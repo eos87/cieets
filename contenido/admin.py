@@ -52,6 +52,7 @@ admin.site.register(Noticia, NoticiaAdmin)
 admin.site.register(Evento, EventoAdmin)
 admin.site.register(Pagina, BaseAdmin)
 admin.site.register(Categoria)
+admin.site.register(CategoriaRincon)
 admin.site.register(RinconLiturgico, RinconAdmin)
 admin.site.register(Publicacion, PublicacionAdmin)
 
