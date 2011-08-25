@@ -48,6 +48,15 @@ def publicacion_detail(request, id):
 
 def rincon_list(request):    
     rincones = RinconLiturgico.objects.all().order_by('-fecha')
+    categorias = CategoriaRincon.objects.all()
+    
+    cat = request.GET.get('cat', '')
+    if cat:
+        rincones = rincones.filter(categoria__id=cat)
+        try: 
+            selecta = int(cat) 
+        except: pass
+    
     return render_to_response('contenido/rincon_list.html', RequestContext(request, locals()))
 
 def rincon_detail(request, slug):

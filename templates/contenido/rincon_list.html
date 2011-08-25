@@ -31,7 +31,7 @@
     <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
     <div class="noticias-categorias">
         {% for categoria in categorias %}
-        <a href="/noticias/?cat={{categoria.pk}}" class="categoria {% if selecta == categoria.id %}categoria-selecta{% endif %}">{{categoria.nombre}}</a>
+        <a href="/rincon-liturgico/?cat={{categoria.pk}}" class="categoria {% if selecta == categoria.id %}categoria-selecta{% endif %}">{{categoria.nombre}}</a>
         {% endfor %}
         <div class="clean"></div>
     </div>    
