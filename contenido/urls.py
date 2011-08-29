@@ -10,6 +10,7 @@ urlpatterns = patterns('cieets.contenido.views',
     (r'^rincon-liturgico/(?P<slug>[-\w]+)/$', 'rincon_detail'),
     (r'^eventos/$', 'eventos'),
     (r'^eventos/(?P<slug>[-\w]+)/$', 'evento_detail'),
+    (r'^eventos_list/$', 'eventos_list'),
     (r'^busqueda/$', 'busqueda'),
 )
 

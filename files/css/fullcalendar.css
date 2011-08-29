@@ -13,6 +13,7 @@
 /* TODO: make font sizes look the same in all doctypes */
 
 
+
 .fc,
 .fc .fc-header,
 .fc .fc-content {
@@ -584,3 +585,4 @@ table.fc-header {
 	}
 	
 	
+.fc-header table td, .fc-header-center, .fc-header-left, .fc-header-right{border:0px !important;}

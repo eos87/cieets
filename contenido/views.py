@@ -69,9 +69,7 @@ def eventos(request):
         end = datetime.datetime.fromtimestamp(float(request.GET['end']))
         fecha1 = datetime.date(start.year, start.month, start.day)
         fecha2 = datetime.date(end.year, end.month, end.day)
-
         eventos = Evento.objects.filter(fecha_inicio__range=(fecha1, fecha2))
-        
         var = []
         for evento in eventos:
             if evento.lugar:
@@ -88,8 +86,23 @@ def eventos(request):
                 }
             var.append(d)
         return HttpResponse(simplejson.dumps(var), mimetype='application/json')
-    
+    categorias = CategoriaEvento.objects.all()
+
     return render_to_response('contenido/event_calendar.html', RequestContext(request, locals()))
+
+def eventos_list(request):    
+    categorias = CategoriaEvento.objects.all()
+    cat = request.GET.get('cat', '')
+    if cat:
+        selecta = int(cat)
+        try:
+            eventos = Evento.objects.filter(categoria__pk=int(cat)).order_by('-fecha_inicio')
+        except:
+            pass
+    else:
+        eventos = Evento.objects.all().order_by('-fecha_inicio')
+    return render_to_response('contenido/eventos_list.html', RequestContext(request, locals()))
+
 
 def evento_detail(request, slug):
     evento = get_object_or_404(Evento, slug=slug)

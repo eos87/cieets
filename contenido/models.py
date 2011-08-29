@@ -104,10 +104,21 @@ class Noticia(models.Model):
         verbose_name = u'Noticia'
         verbose_name_plural = u'Noticias'
 
+class CategoriaEvento(models.Model):
+    nombre = models.CharField(max_length=150)
+
+    def __unicode__(self):
+        return u'%s' % self.nombre
+
+    class Meta:
+        verbose_name = u'Categoria de evento'
+        verbose_name_plural = u'Categorias de los eventos'
+
 class Evento(models.Model):
     titulo = models.CharField(max_length=200)
     fecha_inicio = models.DateTimeField()
     fecha_final = models.DateTimeField()
+    categoria = models.ForeignKey(CategoriaEvento)
     contenido = models.TextField()
     lugar = models.CharField(max_length=100)
     slug = models.SlugField(max_length=250, editable=False)

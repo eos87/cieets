@@ -60,9 +60,16 @@
 
 {% block contenido %}
 <div class="center">
-    <div class="pagina-title">Eventos</div>
+    <div class="pagina-title">Eventos </div>
     <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
-    <br><br>
+    <div id="enlace_eventos"><a href="/eventos_list" class="icono_lista">LISTA</a><a href="/eventos" class="icono_calendario">CALENDARIO</a></div><div class="clean"></div>
+    <div class="noticias-categorias">
+    {% for categoria in categorias %}
+    <a href="/eventos/?cat={{categoria.pk}}" class="categoria {% if selecta == categoria.id %}categoria-selecta{% endif %}">{{categoria.nombre}}</a>
+    {% endfor %}
+    <div class="clean"></div>
+    </div> 
+    <br>
     <div id="calendar"></div>
     <br><br>
 </div>

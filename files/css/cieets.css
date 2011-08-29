@@ -573,6 +573,14 @@ ul.nivel1left li ul li{
     color: #555753;
     font-size: 13px;
 }
+.evento-lista-fecha{
+    font-family: "Times New Roman", sans-serif;
+    color: #A1A1A1;
+    font-size: 35px;
+    float:left;
+    margin-right:5px;
+    width:140px;
+}
 .noticia-lista-leer-mas{
     background: url(/files/img/leer-mas.png) no-repeat;
     display: block;
@@ -930,5 +938,24 @@ td {
 }
 p{
 	text-align: justify !important;
+}
+
+#enlace_eventos a{
+    float:right;
+    margin:10px 10px 0px 10px;
+    display:block;
+    padding:0px 3px 2px 32px;
+    font-size:18px;
+    font-family:"Trebuchet MS", sans-serif;
+    font-weight:bold;
+    color:#586060;
+}
+
+.icono_lista{
+    background:url("/files/img/lista.png") no-repeat;
+}
+
+.icono_calendario{
+    background:url("/files/img/calendario.png") no-repeat;
 }
 	
