@@ -38,7 +38,8 @@
     <div class="noticia-bar">
         <br>        
         <div class="rinconplayer">
-            <span>Autor: {{rincon1.autor}}</span>
+            <span>Autor: {{rincon1.autor}}</span><br>
+            <span>Categoria: </span><a style="font-size: 12px; color: #fff; font-weight: bold;" href="/rincon-liturgico/?cat={{rincon1.categoria.id}}">{{rincon1.categoria}}</a>
             <div id="radioplayer"></div>
         </div>        
        {% if rincon1.adjunto.all %}

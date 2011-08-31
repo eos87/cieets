@@ -26,10 +26,10 @@
 <div class="center">
     <div class="pagina-title">Eventos</div>
     <img src="/files/img/separador-noticias-lista.png" alt="Noticias Cieets">
-    <div id="enlace_eventos"><a href="/eventos_list" class="icono_lista">LISTA</a><a href="/eventos" class="icono_calendario">CALENDARIO</a></div><div class="clean"></div>
+    <div id="enlace_eventos"><a href="/eventos-list/" class="icono_lista">LISTA</a><a href="/eventos/" class="icono_calendario">CALENDARIO</a></div><div class="clean"></div>
     <div class="noticias-categorias">
         {% for categoria in categorias %}
-        <a href="/eventos_list/?cat={{categoria.pk}}" class="categoria {% if selecta == categoria.id %}categoria-selecta{% endif %}">{{categoria.nombre}}</a>
+        <a href="/eventos-list/?cat={{categoria.pk}}" class="categoria {% if selecta == categoria.id %}categoria-selecta{% endif %}">{{categoria.nombre}}</a>
         {% endfor %}
         <div class="clean"></div>
     </div>
@@ -40,7 +40,7 @@
             
                 <div class="evento-lista-fecha">{{evento.fecha_inicio|date:"d M"}}</div>
                 <div class="noticia-lista-title"><a href="{{evento.get_absolute_url}}">{{evento.titulo}}</a></div>
-                <div class="noticia-lista-categoria">Categoria: <a href="/eventos_list/?cat={{evento.categoria.id}}">{{evento.categoria.nombre}}</a></div>
+                <div class="noticia-lista-categoria">Categoria: <a href="/eventos-list/?cat={{evento.categoria.id}}">{{evento.categoria.nombre}}</a></div>
                 
             
             <a href="{{evento.get_absolute_url}}" class="noticia-lista-leer-mas" style="margin-top:0px !important;">Leer Mas</a>

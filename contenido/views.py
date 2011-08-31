@@ -63,13 +63,19 @@ def rincon_detail(request, slug):
     rincon1 = get_object_or_404(RinconLiturgico, slug=slug)
     return render_to_response('contenido/rincon_detail.html', RequestContext(request, locals()))
 
-def eventos(request):
+def eventos(request, cat=None):
+    if cat != None:            
+        selecta = int(cat)           
+        
     if request.is_ajax():
         start = datetime.datetime.fromtimestamp(float(request.GET['start']))
         end = datetime.datetime.fromtimestamp(float(request.GET['end']))
         fecha1 = datetime.date(start.year, start.month, start.day)
         fecha2 = datetime.date(end.year, end.month, end.day)
         eventos = Evento.objects.filter(fecha_inicio__range=(fecha1, fecha2))
+        if cat != None:            
+            selecta = int(cat)            
+            eventos = eventos.filter(categoria__id=cat)        
         var = []
         for evento in eventos:
             if evento.lugar:
